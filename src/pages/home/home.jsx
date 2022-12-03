@@ -14,7 +14,7 @@ const NavBar=()=>{
             <AiFillAppstore/>
           </div>
         </div>
-        <div className="centre-part">
+        <div className="center-part">
           <div>
             <AiOutlineSearch/>
             <input placeholder="Search..."/>

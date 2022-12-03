@@ -1,4 +1,4 @@
-@import '/node_modules/include-media/dist/_include-media.scss';
+@import '../../_include-media.scss';
 .navbar{
     display:flex;
     flex-direction:row;
@@ -25,9 +25,21 @@
     }
     
       }
-    .centre-part{
-      padding:10px
-  
+    .center-part{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+      border: 2px solid #f8efeb;
+      border-radius: 5px;
+      padding:5px;
+      div{
+        display: flex;
+        justify-content: space-between;
+        width: 300px;
+        input{
+            width: 275px;
+        }
+      }
     }
     .right-part{
         span{
