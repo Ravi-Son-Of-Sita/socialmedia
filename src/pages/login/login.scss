@@ -1,0 +1,142 @@
+
+@import '/node_modules/include-media/dist/_include-media.scss';
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+    .card{
+        display: flex;
+        min-height: 600px;
+        border-radius: 10px;
+        width: 60%;
+        box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
+        border-radius: 50px;
+        overflow: hidden;
+        justify-content: space-evenly;
+        flex-direction: row;
+        @include media("<=phonemax"){
+            flex-direction: column-reverse;
+            justify-content: start;
+            width: 100%;
+            border-radius: 5px;
+            gap: 20px;
+        
+        }
+        @include media(">phonemax","<=tablet"){
+            width: 100%;
+            border-radius: 5px;
+        }
+        @include media(">tablet","<=desktop"){
+            width: 75%;}
+        .left{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            gap: 40px;
+            align-self: center;
+            width: 100%;
+            @include media("<=phonemax"){
+                justify-content: space-between;
+                width: 75%;
+            
+            }
+
+            .header{
+                display: flex;
+                flex-direction: row;
+                align-self: center;
+                width: 75%;
+                div{
+                    width: 100%;
+                    align-self: center;
+                }
+                .facebook-twitter{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: end;
+                    width: 100%;
+                    div{
+                        border-radius: 50%;
+                        background-color: #f000;
+                        width: 35px;
+                        height: 35px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid rgba(0, 0, 0, 0.05);
+                        color: #b3b3b3;
+                        margin-left: 6px;
+                    }
+                    div:hover{
+                        color:#ff9933;
+                        border: 1px solid #ff9933
+                    }
+                }
+            
+            }
+            .inputlogin{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                align-self: center;
+                input{
+                    border: none;
+                    border-radius: 10px;
+                    padding: 5px;
+                    background-color: rgb(243, 242, 242);
+                    height: 30px;
+                    width: 200px;
+                }
+
+            }
+            .loginbutton{
+                display: flex;
+                justify-content: center;
+                button{
+                    background:#ff9933;
+                    border: none;
+                    border-radius: 28px;
+                    align-self: center;
+                    width: 50%;
+                    height: 40px;
+                }
+                button:hover{
+                    background: #ffab28;
+                }
+            }
+            .footer{
+                display: flex;
+                flex-direction: row;
+                font-size:0.75em;
+                .remember{
+                    align-self:flex-start;
+            
+                }
+                .forgot{
+                    align-self: flex-end;
+                }
+        
+            }
+        }
+        .right{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            background-image: linear-gradient(to bottom, #ff9933, #ffab28, #ffbf1b, #ffd30a, #ffe700);
+            width: 100%;
+            justify-content: center;
+            overflow:hidden;
+
+            .title{
+                align-self: center;
+                font-family: 'Samarkan', sans-serif;
+                font-size: 200%;                                
+            }
+            .connect{
+                align-self: center;
+            }
+        }
+    }
+}
