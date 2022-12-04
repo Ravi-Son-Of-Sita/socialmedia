@@ -1,11 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss'
+import HomePage from './pages/home/home';
+import NavBar from './component/Navbar';
+import LeftBar from './component/LeftBar';
+import RightBar from './component/RightBar';
 
 function App() {
   
-  return (
-  <h3>hello
-  </h3>  
+  return ( 
+    <div className='full-layout'>
+      <NavBar/>
+      <div className='layout-home'>
+        <LeftBar/>
+        <HomePage/>
+        <RightBar/>
+      </div>
+    </div>
+
   );
 }
 

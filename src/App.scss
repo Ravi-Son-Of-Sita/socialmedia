@@ -1,0 +1,12 @@
+.full-layout{
+  display:flex;
+  flex-direction: column;
+  .layout-home{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    padding: 10px;
+    margin:0px 10px 10px 10px;
+    background-color: aqua;
+  }
+}

@@ -12,13 +12,17 @@ const NavBar=()=>{
             <span>
               samyojak
             </span>
-            <AiFillHome size={'1.35em'}/>
-            <AiFillAppstore size={'1.35em'}/>
+            <div>
+              <AiFillHome size={'1.35em'}/>
+            </div>
+            <div>
+              <AiFillAppstore size={'1.35em'}/>
+            </div>
           </div>
         </div>
         <div className="center-part">
           <div>
-            <FaSearch/>
+            <FaSearch  size={'1.20em'}/>
             <input placeholder="Search..."/>
           </div>
         </div>

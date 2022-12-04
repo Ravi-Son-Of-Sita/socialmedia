@@ -17,13 +17,20 @@
         justify-content:space-between;
         align-items: center;
         padding: 10px;
-        color: aliceblue;
-        gap: 30px;
+        gap: 25px;
         span{
          align-self: center;
-         color: black;
+         color: #424271;
          font-family: 'Samarkan', sans-serif;
          font-size: 1.5rem;
+         font-weight:900;
+         margin-right: 10px;
+        }
+        div{
+          color: aliceblue;
+        }
+        div:hover{
+          color: #575899;
         }
     }
     
@@ -40,11 +47,14 @@
         align-items: center;
         width: 300px;
         height: 30px;
+        padding-left: 10px;
         input{
             border: none;
             height: 30px;
-            width: 275px;
+            width: 250px;
             background-color:#f8efeb;
+            border-top-right-radius:5px;
+            border-bottom-right-radius: 5px;
         }
       }
     }
@@ -81,7 +91,11 @@
             display: flex;
             align-self: center;
             color: #f8efeb;
-
+            border: 1px;
+            border-radius: 25px;
+        }
+        div:hover{
+          color: #575899;
         }
     }
     

@@ -1,11 +1,13 @@
 import React from "react"
-import NavBar from "../../component/Navbar"
 import "./home.scss"
+
 
   const HomePage=()=>{
     return(
-      <div>
-        <NavBar/>
+      <div className="bellow-navbar">
+        <span>story</span>
+        <span>post</span>
+        <span>share</span>
       </div>
     )
   }
