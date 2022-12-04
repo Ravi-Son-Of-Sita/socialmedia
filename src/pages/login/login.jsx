@@ -1,8 +1,35 @@
 import React from "react"
+import { useContext,useState } from "react"
+import { AuthContext } from "../../auth/authContext"
 import "./login.scss"
  import {FaFacebookF,FaTwitter } from "react-icons/fa"
 
+
 const Login=()=>{
+    const [inputs, setInputs] = useState({
+        username: "",
+        password: "",
+      });
+      const [err, setErr] = useState(null);
+
+    const handleChange = (e) => {
+    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+        };
+    //const { login} = useContext(AuthContext);
+    const login=()=>{
+        const inputs={username: 'ravi',
+        password: '1234',}
+      }
+    const handleLogin = async (e) => {
+          e.preventDefault();
+          console.log('printing')
+          try {
+            await login(inputs)
+          } catch (err) {
+            setErr(err.response.data);
+          }
+        };
+
     return(
         <div className="login">
             <div className="card">
@@ -21,12 +48,12 @@ const Login=()=>{
                     </div>
                     <div className="inputlogin">
                         <div >USERNAME</div>
-                        <input type="text" placeholder="User Name"/>
+                        <input type="text" placeholder="User Name" onChange={handleChange}/>
                         <div>PASSWORD</div>
-                        <input type="password" placeholder="Password"/>
+                        <input type="password" placeholder="Password"  onChange={handleChange}/>
                     </div>
                     <div className="loginbutton">
-                        <button>Login</button>
+                        <button onClick={handleLogin}>Login</button>
                     </div>
                     <div className="footer">
                         <div className="remember">
