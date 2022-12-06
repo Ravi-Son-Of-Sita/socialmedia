@@ -15,18 +15,18 @@ const Login=()=>{
     const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
         };
-    //const { login} = useContext(AuthContext);
-    const login=()=>{
+    const { login} = useContext(AuthContext);
+    /*const login=()=>{
         const inputs={username: 'ravi',
         password: '1234',}
-      }
+      }*/
     const handleLogin = async (e) => {
           e.preventDefault();
-          console.log('printing')
           try {
             await login(inputs)
+            console.log(login)
           } catch (err) {
-            setErr(err.response.data);
+            setErr('you have error');
           }
         };
 
@@ -48,9 +48,9 @@ const Login=()=>{
                     </div>
                     <div className="inputlogin">
                         <div >USERNAME</div>
-                        <input type="text" placeholder="User Name" onChange={handleChange}/>
+                        <input type="text" placeholder="User Name" name="username" onChange={handleChange}/>
                         <div>PASSWORD</div>
-                        <input type="password" placeholder="Password"  onChange={handleChange}/>
+                        <input type="password" placeholder="Password"  name="password" onChange={handleChange}/>
                     </div>
                     <div className="loginbutton">
                         <button onClick={handleLogin}>Login</button>

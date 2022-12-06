@@ -9,23 +9,22 @@ import { useContext } from 'react';
 import Login from './pages/login/login';
 
 function App() {
-  console.log('hi im here')
-  const currentUser=false;
-  //const { currentUser } = useContext(AuthContext);
-  /*const Islogin = ({ children }) => {
-    if (!currentUser) {
+  const { currentUser } = useContext(AuthContext);
+  const Islogin = ({ children }) => {
+    /*if (!currentUser) {
       return <Navigate to="/login" />;
+    }*/
+    if (!currentUser) {
+    
+      return <Login/>;
     }
 
     return children;
-  };*/
-  if (!currentUser) {
-    
-    return <Login/>;
-  }
+  };
+  
   
   return ( 
-    //<Islogin>
+    <Islogin>
     <div className='full-layout'>
       <NavBar/>
       <div className='layout-home'>
@@ -34,7 +33,7 @@ function App() {
         <RightBar/>
       </div>
     </div>
-    //</Islogin>
+    </Islogin>
 
   );
 }
