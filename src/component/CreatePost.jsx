@@ -9,15 +9,16 @@ const CreatePost =()=>{
       <div className="post-container">
          <div className="post-upper">
           <div><ProfilePic/></div>
-          <input placeholder="What is in your mind ?"/>
+          <input type="text" placeholder="What is in your mind ?"/>
          </div>
          <div className="post-lower">
+          <hr/>
           <div>
             <label>
             <img src={mediafile} style={{width:'30px',height:'30px',color:'#ff7233'}}/>
             <input type="file" />
             </label>
-            <button>upload</button>
+            <button>Post</button>
           </div>
          </div>
       </div>
