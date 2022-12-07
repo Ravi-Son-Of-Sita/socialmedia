@@ -1,6 +1,6 @@
 import React from "react"
 import "./home.scss"
-import Post from "../../component/Post"
+import CreatePost from "../../component/CreatePost"
 import Story from "../../component/Story"
 
 
@@ -8,7 +8,7 @@ import Story from "../../component/Story"
     return(
       <div className="bellow-navbar">
         <Story/>
-        <Post/>
+        <CreatePost/>
         <span>share</span>
       </div>
     )

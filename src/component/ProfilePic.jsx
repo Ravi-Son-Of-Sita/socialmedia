@@ -8,4 +8,4 @@ function ProfilePic() {
   )
 }
 
-export default ProfilePic
+export default ProfilePic;

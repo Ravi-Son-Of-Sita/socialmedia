@@ -1,1 +1,13 @@
 
+.post-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 500px;
+    max-height: 123px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 20px;
+}
