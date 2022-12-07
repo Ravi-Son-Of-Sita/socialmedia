@@ -9,7 +9,8 @@ import { useContext } from 'react';
 import Login from './pages/login/login';
 
 function App() {
-  const { currentUser } = useContext(AuthContext);
+  //const { currentUser } = useContext(AuthContext);
+  const currentUser=true;
   const Islogin = ({ children }) => {
     /*if (!currentUser) {
       return <Navigate to="/login" />;
