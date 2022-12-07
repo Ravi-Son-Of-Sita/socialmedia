@@ -1,7 +1,8 @@
 import React from "react"
+import './creatpost.scss'
 
 
-const Post =()=>{
+const CreatePost =()=>{
     return(
       <div className="post-container">
          <div className="post-detail">Ravishudhan</div>
@@ -15,4 +16,4 @@ const Post =()=>{
     )
   
   }
-  export default Post;
+  export default CreatePost;
