@@ -11,12 +11,14 @@ const CreatePost =()=>{
           <div><ProfilePic/></div>
           <input type="text" placeholder="What is in your mind ?"/>
          </div>
+         <hr/>
          <div className="post-lower">
-          <hr/>
+          
           <div>
             <label>
             <img src={mediafile} style={{width:'30px',height:'30px',color:'#ff7233'}}/>
-            <input type="file" />
+            <span>Video/Image</span>
+            <input type="file" style={{visibility:'hidden'}}/>
             </label>
             <button>Post</button>
           </div>
