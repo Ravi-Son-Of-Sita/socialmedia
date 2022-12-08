@@ -2,4 +2,35 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    width: 310px;
+    overflow-x: hidden;
+    overflow-x: scroll;
+    height: 126px;
+    hr{
+        min-height:2px;
+        width:250px;
+        border: none;
+        background-color: rgb(207, 207, 207);
+    }
+    .top-part{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        div{
+        display: flex;
+        flex-direction: row;
+        align-content:center;
+        gap: 10px;
+        div{
+            width: 30px;
+            height: 30px;
+            color: #ff7233;
+            object-fit: cover;
+            justify-content: center;
+        }
+        span{
+            align-self: center;
+        }
+        }
+    }
 }
