@@ -16,10 +16,6 @@ const Login=()=>{
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
         };
     const { login} = useContext(AuthContext);
-    /*const login=()=>{
-        const inputs={username: 'ravi',
-        password: '1234',}
-      }*/
     const handleLogin = async (e) => {
           e.preventDefault();
           try {

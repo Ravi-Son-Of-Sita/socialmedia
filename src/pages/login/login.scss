@@ -124,10 +124,11 @@
             display: flex;
             flex-direction: column;
             padding: 10px;
-            background-image: linear-gradient(to bottom, #ff9933, #ffab28, #ffbf1b, #ffd30a, #ffe700);
+            background-color: #ff7233;
             width: 100%;
             justify-content: center;
             overflow:hidden;
+            color:  #424271;
 
             .title{
                 align-self: center;
