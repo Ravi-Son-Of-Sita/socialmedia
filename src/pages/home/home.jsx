@@ -9,7 +9,7 @@ import Story from "../../component/Story"
       <div className="bellow-navbar">
         <Story/>
         <CreatePost/>
-        <span>share</span>
+        <span>Posts</span>
       </div>
     )
   }

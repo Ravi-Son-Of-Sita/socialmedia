@@ -9,6 +9,7 @@ import {AiFillDownCircle} from "react-icons/ai"
 function LeftBar() {
   return (
     <div className="left-bar">
+      <div className='left-bar-cont'>
         <div className="top-part">
           <div>
           <ProfilePic />
@@ -41,6 +42,7 @@ function LeftBar() {
         <div className="middle-part">middle</div>
         <hr/>
         <div className="bottom-part">bottom</div>
+      </div>
     </div>
     
   )

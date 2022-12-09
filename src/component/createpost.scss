@@ -32,9 +32,32 @@
         justify-content: space-between;
         align-content: center;
         div{
+            display: flex;
+            justify-content: space-between;
+            height: 40px;
+            overflow: hidden;
+            width: 100%;
+            gap: 10px;
             label{
-                background-color: #ff7233;
                 width: 150px;
+                
+                span{
+                    align-self: baseline;
+                    padding-left: 20px;
+                }
+            }
+
+            button{
+                height: 35px;
+                width: 60px;
+                background-color: #ff7233;
+                border-radius: 10px;
+                border: none;
+                color: #424271
+            }
+            button:hover{
+                background-color: #424271;
+                color: #ff7233;
             }
         }
         

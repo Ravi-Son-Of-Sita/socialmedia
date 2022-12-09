@@ -1,4 +1,5 @@
 import './App.scss'
+import "./assest/SAMARO__.woff"
 import HomePage from './pages/home/home';
 import NavBar from './component/Navbar';
 import LeftBar from './component/LeftBar';
