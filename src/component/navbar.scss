@@ -47,10 +47,20 @@
       div{
         display: flex;
         justify-content: space-between;
+        box-direction: row;
         align-items: center;
         width: 300px;
         height: 30px;
         padding-left: 10px;
+        @include media("<=phonemax"){
+          width: 40px;
+      }
+      @include media(">phonemax","<=tablet"){
+         width: 100px;
+      }
+      @include media(">tablet","<=desktop"){
+        width: 179px;
+          }
         input{
             border: none;
             height: 30px;
@@ -58,6 +68,17 @@
             background-color:#f8efeb;
             border-top-right-radius:5px;
             border-bottom-right-radius: 5px;
+            @include media("<=phonemax"){
+              
+              display: none;
+          
+          }
+          @include media(">phonemax","<=tablet"){
+            width: 50px;
+         }
+         @include media(">tablet","<=desktop"){
+          width: 150px;
+            }
         }
       }
     }
@@ -88,6 +109,14 @@
             span{
                 align-self: center;
                 color: #f8efeb;
+                @include media(">phonemax","<=tablet"){
+                  display: none;
+               }
+               @include media("<=phonemax"){
+              
+                display: none;
+            
+            }
             }
         }
         div{
