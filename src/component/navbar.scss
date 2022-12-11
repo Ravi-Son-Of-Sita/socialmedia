@@ -19,6 +19,7 @@
         width: 40px;
         height: 40px;
         border-radius: 50%;
+        margin-right: 5px;
         background-color:rgba($color: #424271, $alpha: 0.7);
         .icon-mid-container{
           display: flex;
@@ -30,12 +31,12 @@
         border-radius: 50%;
 
           .s{
-            font-family: 'Samarkan', sans-serif;
+            font-family: sans-serif;
             color: #ff7233;
             font-size: 2rem;
             display: inline-flex;
             min-height: 30px;
-            align-items: center;
+            align-items:self-end;
           }
         }
       }
@@ -49,7 +50,7 @@
         .logo-text{
          align-self: center;
          color: #424271;
-         font-family:  sans-serif;
+         font-family:  'Samarkan',sans-serif;
          font-size: 1.5rem;
          font-weight:900;
          margin-right: 10px;
