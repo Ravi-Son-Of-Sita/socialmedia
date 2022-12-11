@@ -1,4 +1,5 @@
 import React from "react"
+import { useNavigate } from "react-router-dom"
 import { useContext,useState } from "react"
 import { AuthContext } from "../auth/authContext"
 import "./login.scss"
@@ -10,17 +11,28 @@ const Login=()=>{
         username: "",
         password: "",
       });
-      const [err, setErr] = useState(null);
+    const [err, setErr] = useState(null);
+
+    const navigate = useNavigate()
 
     const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
         };
     const { login} = useContext(AuthContext);
+    
+    const handelForgot=()=>{
+        navigate("/forgotpass")
+    };
+    const handelRegister=()=>{
+        navigate("/register")
+    }
+
     const handleLogin = async (e) => {
           e.preventDefault();
           try {
             await login(inputs)
             console.log(login)
+            navigate("/")
           } catch (err) {
             setErr('you have error');
           }
@@ -56,7 +68,7 @@ const Login=()=>{
                             <input type="checkbox"/>
                             <label>Remember Me</label>
                         </div>
-                        <div className="forgot">
+                        <div className="forgot" onClick={handelForgot}>
                             forgot password
                         </div>
                     </div>
@@ -67,8 +79,11 @@ const Login=()=>{
                     <h1>Smayojak</h1>
                   </div>
                   <div className="connect">
-                    <h3>Connecting Heart to Heart</h3> 
+                    <h1>Better.</h1> 
+                    <h2> Best.</h2>
+                    <h3> Wow!</h3>
                   </div>
+                  <button onClick={handelRegister}>Register</button>
                 </div>
             </div>
         </div>

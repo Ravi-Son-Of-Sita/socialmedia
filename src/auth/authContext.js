@@ -13,9 +13,10 @@ const AuthContextProvider = ({ children }) => {
   }*/
 
  const login = async () => {
-  console.log('im here')
+ 
   
     setCurrentUser(true)
+    console.log('im here')
   };
 
   useEffect(() => {
