@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import {createBrowserRouter,RouterProvider,Navigate,Outlet} from "react-router-dom"
+import {createHashRouter,RouterProvider,Navigate,Outlet} from "react-router-dom"
 
 
 import './App.scss'
@@ -39,7 +39,7 @@ function App() {
 
     return children;
   };
-  const route=createBrowserRouter([
+  const route=createHashRouter([
     {
         path:'/',
         element:(
