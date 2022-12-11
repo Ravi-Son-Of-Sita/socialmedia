@@ -1,3 +1,4 @@
+@import '../_include-media.scss';
 .story-contanier{
     display: flex;
     flex-direction: row;
@@ -8,6 +9,12 @@
     gap: 10px;
     overflow-y: scroll;
     box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px 1px;
+    @include media("<=phonemax"){
+        width: 300px;
+    }
+    @include media(">phonemax","<=tablet"){
+        width: 400px;
+      }
     .create-story{
         display: flex;
         flex-direction: column;

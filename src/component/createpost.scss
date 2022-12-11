@@ -1,4 +1,4 @@
-
+@import '../_include-media.scss';
 .post-container{
     display: flex;
     flex-direction: column;
@@ -11,6 +11,12 @@
     padding: 15px;
     gap: 10px;
     box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px 1px;
+    @include media("<=phonemax"){
+        width: 300px;
+    }
+    @include media(">phonemax","<=tablet"){
+        width: 400px;
+      }
     .post-upper{
         display: flex;
         flex-direction: row;

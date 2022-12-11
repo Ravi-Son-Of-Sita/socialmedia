@@ -1,7 +1,7 @@
 import React from "react"
 import "./home.scss"
-import CreatePost from "../../component/CreatePost"
-import Story from "../../component/Story"
+import CreatePost from "./CreatePost"
+import Story from "./Story"
 
 
   const HomePage=()=>{

@@ -1,3 +1,4 @@
+@import './_include-media.scss';
 @font-face {
   font-family:'Samarkan';
   src: url(./assest/SAMARO__.woff) format('woff');
@@ -6,12 +7,24 @@
 .full-layout{
   display:flex;
   flex-direction: column;
+  .navbar{
+    position:fixed;
+    top: 0px;
+    z-index: 1;
+  }
   .layout-home{
+    position:relative;
     display: flex;
     flex-direction:row;
     justify-content: space-between;
     padding: 10px;
-    margin:0px 10px 10px 10px;
     background-color: rgb(255, 255, 255);
+    @include media("<=phonemax"){
+      padding: auto;
+      justify-content: center;
+  }
+
+      
+
   }
 }

@@ -1,0 +1,9 @@
+@import '../_include-media.scss';
+.right-bar{
+    @include media("<=phonemax"){
+       display: none;
+    }
+    @include media(">phonemax","<=tablet"){
+        display: none;
+      }
+}

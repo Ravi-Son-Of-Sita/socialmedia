@@ -1,13 +1,17 @@
+import { useContext } from 'react';
+import {RouterProvider} from "react-router-dom"
+
+
 import './App.scss'
 import "./assest/SAMARO__.woff"
-import HomePage from './pages/home/home';
+import HomePage from './component/home';
 import NavBar from './component/Navbar';
 import LeftBar from './component/LeftBar';
 import RightBar from './component/RightBar';
 import { AuthContext } from './auth/authContext';
-import {Navigate} from "react-router-dom"
-import { useContext } from 'react';
-import Login from './pages/login/login';
+import { midRoute } from './routes/route';
+
+import Login from './component/login';
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -25,11 +29,11 @@ function App() {
   return ( 
     <Islogin>
     <div className='full-layout'>
-      <NavBar/>
+      <NavBar className='navbar'/>
       <div className='layout-home'>
-        <LeftBar/>
-        <HomePage/>
-        <RightBar/>
+        <LeftBar className='leftbar'/>
+        <RouterProvider router={midRoute} />
+        <RightBar className='rightbar'/>
       </div>
     </div>
     </Islogin>

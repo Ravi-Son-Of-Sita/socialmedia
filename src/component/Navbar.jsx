@@ -8,8 +8,15 @@ const NavBar=()=>{
     return(
       <div className="navbar">
         <div className="left-part">
-          <div>
-            <span>
+        <div className="icon-container">
+              <div className="icon-mid-container">
+                <span className="s">
+                  s
+                </span>
+              </div>
+            </div>
+          <div className="logo-name">
+            <span className="logo-text">
               samyojak
             </span>
             <div>

@@ -1,0 +1,14 @@
+@import '../_include-media.scss';
+
+.bellow-navbar{
+    display: flex;
+    flex-direction: column ;
+    padding:10px;
+    padding-top: 55px;
+    @include media("<=phonemax"){
+        padding: auto;
+    }
+}
+.bellow-navbar>*{
+    margin-bottom: 10px;
+}

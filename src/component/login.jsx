@@ -1,6 +1,6 @@
 import React from "react"
 import { useContext,useState } from "react"
-import { AuthContext } from "../../auth/authContext"
+import { AuthContext } from "../auth/authContext"
 import "./login.scss"
  import {FaFacebookF,FaTwitter } from "react-icons/fa"
 

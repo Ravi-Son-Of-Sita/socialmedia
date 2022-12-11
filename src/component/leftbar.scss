@@ -1,5 +1,13 @@
+@import '../_include-media.scss';
+
+
 .left-bar{
     overflow: hidden;
+
+    @include media("<=phonemax"){
+           
+        display: none;
+    }
     .left-bar-cont{
         display: flex;
         padding-top: 10px;
@@ -8,7 +16,11 @@
         width: 310px;
         overflow-x: scroll;
         height: 600px;
-        padding: 45px;
+        
+        @include media(">phonemax","<=tablet"){
+            width: 200px;
+            padding-left: 10px;
+          }
         
         hr{
             min-height:2px;
