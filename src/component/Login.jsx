@@ -11,7 +11,7 @@ const Login=()=>{
         username: "",
         password: "",
       });
-    const [err, setErr] = useState(null);
+    //const [err, setErr] = useState(null);
 
     const navigate = useNavigate()
 
@@ -34,7 +34,7 @@ const Login=()=>{
             console.log(login)
             navigate("/")
           } catch (err) {
-            setErr('you have error');
+            //setErr('you have error');
           }
         };
 
@@ -65,7 +65,7 @@ const Login=()=>{
                     </div>
                     <div className="footer">
                         <div className="remember">
-                            <input type="checkbox"/>
+                            <input type="checkbox" />
                             <label>Remember Me</label>
                         </div>
                         <div className="forgot" onClick={handelForgot}>

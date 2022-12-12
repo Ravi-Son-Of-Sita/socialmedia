@@ -1,11 +1,11 @@
-import axios from "axios";
+//import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext('');
 
 const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(
-    JSON.parse(localStorage.getItem("users")) || true
+    JSON.parse(localStorage.getItem("users")) || false
   );
   /*const login=()=>{
     const inputs={username: 'ravi',

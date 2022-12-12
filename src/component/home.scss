@@ -1,10 +1,10 @@
 @import '../_include-media.scss';
 
 .bellow-navbar{
-    display: flex;
-    flex-direction: column ;
+    display: block;
     padding:10px;
-    padding-top: 55px;
+    overflow-x: scroll;
+    height: 100vh;
     @include media("<=phonemax"){
         padding: auto;
     }

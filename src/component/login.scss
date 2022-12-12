@@ -53,7 +53,7 @@
                 .facebook-twitter{
                     display: flex;
                     flex-direction: row;
-                    justify-content: end;
+                    justify-content: flex-end;
                     width: 100%;
                     div{
                         border-radius: 50%;
@@ -93,7 +93,7 @@
                 display: flex;
                 justify-content: center;
                 button{
-                    background:#ff9933;
+                    background:#ff7233;
                     border: none;
                     border-radius: 28px;
                     align-self: center;
