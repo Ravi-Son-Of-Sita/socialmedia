@@ -7,18 +7,23 @@
 .full-layout{
   display:flex;
   flex-direction: column;
+  position: relative;
   .navbar{
     position:fixed;
     top: 0px;
     z-index: 1;
   }
   .layout-home{
-    position:relative;
+    position:absolute;
+    top: 45px;
     display: flex;
     flex-direction:row;
     justify-content: space-between;
-    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     background-color: rgb(255, 255, 255);
+    min-width: 100vw;
+
     @include media("<=phonemax"){
       padding: auto;
       justify-content: center;
