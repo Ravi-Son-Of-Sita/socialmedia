@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import "./leftbar.scss"
 import ProfilePic from './ProfilePic'
 import {FaUserFriends,FaClock} from "react-icons/fa"
@@ -11,30 +12,30 @@ function LeftBar() {
     <div className="left-bar">
       <div className='left-bar-cont'>
         <div className="top-part">
-          <div>
+          <Link  classNmae='links' to='/profile'>
           <ProfilePic />
           <span>Ravi Ranjan Kumar</span>
-          </div>
-          <div>
+          </Link>
+          <Link  classNmae='links' to='/friends'>
             <div><FaUserFriends size={'1.75em'}/></div>
             <span>Friends</span>
-          </div>
-          <div>
+          </Link>
+          <Link  classNmae='links' to=''>
             <div><FaClock size={'1.5em'}/></div>
             <span>Most Recent</span>
-          </div>
-          <div>
+          </Link>
+          <Link  classNmae='links' to=''>
             <div><TiGroup size={'1.75em'}/></div>
             <span>Groups</span>
-          </div>
-          <div>
+          </Link>
+          <Link  classNmae='links' to=''>
             <div><BsFillCaretRightSquareFill size={'1.5em'}/></div>
             <span>Watch</span>
-          </div>
-          <div>
+          </Link>
+          <Link  classNmae='links' to=''>
             <div><AiFillDownCircle size={'1.75em'}/></div>
             <span>More</span>
-          </div>
+          </Link>
 
 
         </div>

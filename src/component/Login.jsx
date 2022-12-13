@@ -31,7 +31,6 @@ const Login=()=>{
           e.preventDefault();
           try {
             await login(inputs)
-            console.log(login)
             navigate("/")
           } catch (err) {
             //setErr('you have error');

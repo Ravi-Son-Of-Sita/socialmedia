@@ -22,7 +22,7 @@
     padding-left: 20px;
     padding-right: 20px;
     background-color: rgb(255, 255, 255);
-    min-width: 100vw;
+    min-width:calc(100vw - 50px);
 
     @include media("<=phonemax"){
       padding: auto;
