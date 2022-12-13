@@ -20,6 +20,7 @@
         height: 40px;
         border-radius: 50%;
         margin-right: 5px;
+        cursor: pointer;
         background-color:rgba($color: #424271, $alpha: 0.7);
         .icon-mid-container{
           display: flex;
@@ -66,6 +67,7 @@
 
         }
         div{
+          cursor: pointer;
           color: aliceblue;
         }
         div:hover{
@@ -98,6 +100,7 @@
         width: 300px;
         height: 30px;
         padding-left: 10px;
+        cursor:pointer;
         @include media("<=phonemax"){
           width: 25px;
           padding-left:5px;
@@ -140,16 +143,12 @@
             flex-direction: row;
             justify-content: center;
             align-self: center;
-            gap: 10px;
+            margin-right: 10px;
             div{
                 width: 30px;
                 height: 30px;
                 border-radius: 25px;
                 overflow: hidden;
-                img{
-                    width: 30px;
-                    height: 30px;
-                }
                 
             }
             span{
@@ -165,12 +164,16 @@
             }
             }
         }
+        .profilepic>*{
+          margin-right: 10px;
+          cursor: pointer;
+        }
         div{
             display: flex;
             align-self: center;
             color: #f8efeb;
-            border: 1px;
             border-radius: 25px;
+            cursor: pointer;
         }
         div:hover{
           color: #575899;

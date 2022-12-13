@@ -2,8 +2,9 @@ import React from "react"
 import { useNavigate } from "react-router-dom"
 import "./navbar.scss"
 import Profilepic from "../assest/profilepic.png"
+import ProfilePic from "./ProfilePic"
 
-import {AiFillHome,AiFillAppstore,AiOutlineSearch,AiFillNotification,AiFillMessage} from "react-icons/ai"
+import {AiFillHome,AiFillAppstore,AiFillNotification,AiFillMessage} from "react-icons/ai"
 import{FaUserFriends,FaSearch} from "react-icons/fa"
 const NavBar=()=>{
 
@@ -68,7 +69,7 @@ const NavBar=()=>{
         <div className="right-part">
             <div className="profilepic">
                 <div  onClick={handelProfile}>
-                    <img src={Profilepic}/>
+                    <ProfilePic size={'30px'} image={Profilepic}/>
                 </div>
                 <span>Ravi Ranjan Kumar</span>
             </div>

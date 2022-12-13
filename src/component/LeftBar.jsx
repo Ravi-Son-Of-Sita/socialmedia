@@ -8,34 +8,65 @@ import {BsFillCaretRightSquareFill} from "react-icons/bs"
 import {AiFillDownCircle} from "react-icons/ai"
 
 function LeftBar() {
+  const linkStyl={
+    textDecoration:'none' ,color:'#ff7233'
+  }
   return (
     <div className="left-bar">
       <div className='left-bar-cont'>
         <div className="top-part">
-          <Link  classNmae='links' to='/profile'>
-          <ProfilePic />
+          <div><Link   to='/profile' style={linkStyl}>
+            <div className='link-con'>
+            <div className='icon-con'><ProfilePic  size={'2em'}/></div>
           <span>Ravi Ranjan Kumar</span>
-          </Link>
-          <Link  classNmae='links' to='/friends'>
-            <div><FaUserFriends size={'1.75em'}/></div>
-            <span>Friends</span>
-          </Link>
-          <Link  classNmae='links' to=''>
-            <div><FaClock size={'1.5em'}/></div>
-            <span>Most Recent</span>
-          </Link>
-          <Link  classNmae='links' to=''>
-            <div><TiGroup size={'1.75em'}/></div>
-            <span>Groups</span>
-          </Link>
-          <Link  classNmae='links' to=''>
-            <div><BsFillCaretRightSquareFill size={'1.5em'}/></div>
-            <span>Watch</span>
-          </Link>
-          <Link  classNmae='links' to=''>
-            <div><AiFillDownCircle size={'1.75em'}/></div>
-            <span>More</span>
-          </Link>
+            </div>
+          
+          </Link></div>
+          <div> 
+            <Link  to='/friends' style={linkStyl}>
+              <div className='link-con'>
+                <div className='icon-con'><FaUserFriends size={'1.75em'}/></div>
+                <span>Friends</span>
+              </div>
+            
+            </Link>
+          </div>
+          <div>
+            <Link   to='' style={linkStyl}>
+              <div className='link-con'>
+                <div className='icon-con'><FaClock size={'1.5em'}/></div>
+                <span>Most Recent</span>
+              </div>
+            
+            </Link>
+          </div>
+          <div>
+            <Link   to='' style={linkStyl}>
+              <div className='link-con'>
+                <div className='icon-con'><TiGroup size={'1.75em'}/></div>
+                <span>Groups</span>
+              </div>
+            
+            </Link>
+          </div>
+          <div>
+            <Link   to='' style={linkStyl}>
+            <div className='link-con'>
+              <div className='icon-con'><BsFillCaretRightSquareFill size={'1.5em'}/></div>
+              <span>Watch</span>
+            </div>
+            
+            </Link>
+          </div>
+          <div>
+            <Link   to='' style={linkStyl}>
+              <div className='link-con'>
+                <div className='icon-con'><AiFillDownCircle size={'1.75em'}/></div>
+                <span>More</span>
+              </div>
+            
+            </Link>
+          </div>
 
 
         </div>

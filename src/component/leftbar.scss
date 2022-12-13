@@ -36,18 +36,23 @@
             display: flex;
             flex-direction: row;
             align-content:center;
-            div{
-                width: 30px;
-                height: 30px;
-                color: #ff7233;
-                object-fit: cover;
-                justify-content: center;
-                margin-bottom: 10px;
+        
+                text-decoration: none;
+                .link-con{
+                .icon-con{
+                    display: flex;
+                    min-width: 40px;
+                    min-height: 40px;
+                    justify-content: center;
+                    flex-direction: column;
+                    margin-right: 10px;
+                
+                }
+                span{
+                    align-self: center;
+                }
             }
-            span{
-                align-self: center;
-            }
-            }
+        }
         }
 
 
