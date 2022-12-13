@@ -14,7 +14,7 @@ function Profile() {
           <div className='cover-pic'>
             <img src={cover} alt='cover'/>
           </div>
-          <ProfilePic/>
+          <ProfilePic size={'150px'}/>
           <BiCamera/>
         </div>
         <span>Ravi Ranjan Kumar</span>

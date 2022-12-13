@@ -67,8 +67,8 @@ const NavBar=()=>{
           </div>
         </div>
         <div className="right-part">
-            <div className="profilepic">
-                <div  onClick={handelProfile}>
+            <div className="profilepic" onClick={handelProfile}>
+                <div>
                     <ProfilePic size={'30px'} image={Profilepic}/>
                 </div>
                 <span>Ravi Ranjan Kumar</span>
