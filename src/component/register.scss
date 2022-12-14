@@ -1,0 +1,197 @@
+@import '../_include-media.scss';
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+    .card{
+        display: flex;
+        min-height: 600px;
+        border-radius: 10px;
+        width: 60%;
+        box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
+        border-radius: 50px;
+        overflow: hidden;
+        justify-content: space-evenly;
+        flex-direction: row;
+        margin-top: 10px;
+    
+        @include media("<=phonemax"){
+            flex-direction: column-reverse;
+            justify-content: start;
+            width: 100%;
+            border-radius: 5px;
+        
+        }
+        @include media(">phonemax","<=tablet"){
+            width: 100%;
+            border-radius: 5px;
+        }
+        @include media(">tablet","<=desktop"){
+            width: 75%;}
+        .left{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            align-self: center;
+            width: 100%;
+            @include media("<=phonemax"){
+                justify-content: space-between;
+                width: 75%;
+            
+            }
+
+            .header{
+                display: flex;
+                flex-direction: row;
+                align-self: center;
+                width: 75%;
+                div{
+                    width: 100%;
+                    align-self: center;
+                }
+                .facebook-twitter{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    width: 100%;
+                    div{
+                        border-radius: 50%;
+                        background-color: #f000;
+                        width: 35px;
+                        height: 35px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid rgba(0, 0, 0, 0.05);
+                        color: #b3b3b3;
+                        margin-left: 6px;
+                    }
+                    div:hover{
+                        color:#ff9933;
+                        border: 1px solid #ff9933
+                    }
+                }
+            
+            }
+            .inputlogin{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                align-self: center;
+                input{
+                    border: none;
+                    border-radius: 10px;
+                    padding: 5px;
+                    background-color: rgb(243, 242, 242);
+                    height: 30px;
+                    width: 200px;
+                }
+
+            }
+            .loginbutton{
+                display: flex;
+                justify-content: center;
+                button{
+                    background:#ff7233;
+                    border: none;
+                    border-radius: 28px;
+                    align-self: center;
+                    width: 50%;
+                    height: 40px;
+                }
+                button:hover{
+                    background: #ffab28;
+                }
+            }
+            .footer{
+                display: flex;
+                flex-direction: row;
+                font-size:0.75em;
+                justify-content: space-around;
+                padding-right: 10px;
+                align-content: center;
+                .remember{
+                    align-self:flex-start;
+            
+                }
+                .forgot{
+                    cursor: pointer;
+                    align-self: center;
+                }
+                .forgot:hover{
+                    color: #ff7233;
+                }
+        
+            }
+        }
+        .left>*{
+            margin-bottom: 40px;
+        }
+        .right{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            background-color: #ff7233;
+            width: 100%;
+            justify-content: center;
+            align-content: center;
+            overflow:hidden;
+            color:  #424271;
+
+            .title{
+                align-self: center;
+                font-family: 'Samarkan', sans-serif;
+                font-size: 200%; 
+                @include media("<=phonemax"){
+                    height: 100px;
+                }                               
+            }
+            .connect{
+                display: flex;
+                flex-direction: column;
+                justify-content:center;
+                align-content: center;
+
+                align-self: center;
+                @include media("<=phonemax"){
+                    flex-direction: row;
+                }
+    
+           }
+           .connect>*{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            @include media("<=phonemax"){
+                flex-direction: row;
+                align-self: baseline;
+            }
+            }
+            button{
+                padding:10px;
+                align-self: center;
+                width: 50%;
+                height: 50px;
+                background-color: #424271;
+                color: #ff7233;
+                border-radius: 25px;
+                border: none;
+                font-size: 1rem;
+            }
+            button:hover{
+                border: 1em;
+                background-color: #ff7233;
+                color: #424271;
+                border-color: #424271;
+            }
+        }
+    }
+    .card>*{
+        @include media("<=phonemax"){
+           margin-bottom: 20px;
+        
+        }
+    }
+}
