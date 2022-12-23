@@ -33,7 +33,7 @@ const Register=()=>{
             <div className="card">
                 <div className="left">
                     <div className="header">
-                        <div>Sgin Up</div>
+                        <div>Sign Up</div>
                     </div>
                     <div className="inputlogin">
 

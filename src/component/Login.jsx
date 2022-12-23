@@ -11,7 +11,7 @@ const Login=()=>{
         username: "",
         password: "",
       });
-    //const [err, setErr] = useState(null);
+    const [err, setErr] = useState(null);
 
     const navigate = useNavigate()
 
@@ -27,15 +27,15 @@ const Login=()=>{
         navigate("/register")
     }
 
-    const handleLogin = async (e) => {
-          e.preventDefault();
-          try {
-            await login(inputs)
-            navigate("/")
-          } catch (err) {
-            //setErr('you have error');
-          }
-        };
+  const handleLogin = async (e) => {
+    try {
+      await login();
+      navigate("/");
+      console.log("reach here");
+    } catch (err) {
+      setErr(err.response.data);
+    }
+  };
 
     return(
         <div className="login">

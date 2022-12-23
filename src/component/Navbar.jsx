@@ -1,17 +1,39 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
+import { useContext } from "react"
 import "./navbar.scss"
+import { AuthContext } from "../auth/authContext"
 import Profilepic from "../assest/profilepic.png"
 import ProfilePic from "./ProfilePic"
 
-import {AiFillHome,AiFillAppstore,AiFillNotification,AiFillMessage} from "react-icons/ai"
+import {AiFillCloseCircle,AiFillHome,AiFillAppstore,AiFillNotification,AiFillMessage} from "react-icons/ai"
 import{FaUserFriends,FaSearch} from "react-icons/fa"
+import { useState } from "react"
 const NavBar=()=>{
 
+  const [logoutDisply, setLogoutDisplay]= useState('logout-none')
+
   const navigate = useNavigate()
+
+  const {logout} = useContext(AuthContext);
+  const handleLogout = async (e) => {
+    try {
+      await logout();
+      navigate("/")
+    } catch (err) {
+      console.log("not logout")
+    }
+  };
   const handelProfile=(e)=>{
     e.preventDefault();
-    navigate('/profile')
+    if(logoutDisply==='logout-none'){
+      setLogoutDisplay('logout-cont')
+      console.log('logout-display')
+    }else{ 
+      setLogoutDisplay('logout-none')
+      console.log('logout-hide')
+    }
+   
   }
   const handelFriends=(e)=>{
     e.preventDefault();
@@ -72,6 +94,13 @@ const NavBar=()=>{
                     <ProfilePic size={'30px'} image={Profilepic}/>
                 </div>
                 <span>Ravi Ranjan Kumar</span>
+            </div>
+            <div className={logoutDisply}>
+              <div className="logout-inner">
+                <div><AiFillCloseCircle size={'1.35em'} onClick={handelProfile}/></div>
+              <button onClick={handleLogout}>Logout</button>
+              </div>
+
             </div>
             <div>
                 <AiFillNotification size={'1.35em'} onClick={handelNotification}/>
