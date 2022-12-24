@@ -219,6 +219,14 @@
         .logout-none{
           display: none;
         }
+
+        .message-box-none{
+          display: none;
+        }
+        .message-box{
+          display: block;
+          position: absolute;
+        }
     }
     .right-part>*{
       margin-left:30px;

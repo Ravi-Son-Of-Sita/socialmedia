@@ -5,6 +5,7 @@ import "./navbar.scss"
 import { AuthContext } from "../auth/authContext"
 import Profilepic from "../assest/profilepic.png"
 import ProfilePic from "./ProfilePic"
+import Messagebox from "./Messagebox"
 
 import {AiFillCloseCircle,AiFillHome,AiFillAppstore,AiFillNotification,AiFillMessage} from "react-icons/ai"
 import{FaUserFriends,FaSearch} from "react-icons/fa"
@@ -12,6 +13,7 @@ import { useState } from "react"
 const NavBar=()=>{
 
   const [logoutDisply, setLogoutDisplay]= useState('logout-none')
+  const [messageDisply, setMessageDisplay]= useState('message-box-none')
 
   const navigate = useNavigate()
 
@@ -57,6 +59,13 @@ const NavBar=()=>{
   }
   const handelMessage=(e)=>{
     e.preventDefault();
+    if(logoutDisply==='message-box-none'){
+      setMessageDisplay('message-box')
+      console.log('message-box')
+    }else{ 
+      setMessageDisplay('message-box')
+      console.log('message-box-none')
+    }
     console.log('opening Message ....')
   }
 
@@ -110,6 +119,9 @@ const NavBar=()=>{
             </div>
             <div>
                 <FaUserFriends size={'1.35em'} onClick={handelFriends}/>
+            </div>
+            <div className={messageDisply}>
+            <Messagebox/>
             </div>
           
         </div>
