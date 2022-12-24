@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import{FiEdit} from 'react-icons/fi'
 import {BiCamera} from 'react-icons/bi'
 import { AuthContext } from '../auth/authContext';
-import ProfilePic from "./ProfilePic"
+import ProfilePic from "../extracompont/ProfilePic"
 import cover from "../assest/cover.jpg"
 import './profile.scss'
 function Profile() {

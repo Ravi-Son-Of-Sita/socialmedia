@@ -4,8 +4,9 @@ import { useContext } from "react"
 import "./navbar.scss"
 import { AuthContext } from "../auth/authContext"
 import Profilepic from "../assest/profilepic.png"
-import ProfilePic from "./ProfilePic"
+import ProfilePic from "../extracompont/ProfilePic"
 import Messagebox from "./Messagebox"
+import NumberIndicator from "../extracompont/NumberIndicator"
 
 import {AiFillCloseCircle,AiFillHome,AiFillAppstore,AiFillNotification,AiFillMessage} from "react-icons/ai"
 import{FaUserFriends,FaSearch} from "react-icons/fa"
@@ -26,7 +27,7 @@ const NavBar=()=>{
       console.log("not logout")
     }
   };
-  const handelProfile=(e)=>{
+  const handleProfile=(e)=>{
     e.preventDefault();
     if(logoutDisply==='logout-none'){
       setLogoutDisplay('logout-cont')
@@ -37,33 +38,33 @@ const NavBar=()=>{
     }
    
   }
-  const handelFriends=(e)=>{
+  const handleFriends=(e)=>{
     e.preventDefault();
     navigate('/friends')
   }
-  const handelHome=(e)=>{
+  const handleHome=(e)=>{
     e.preventDefault();
     navigate('/')
   }
-  const handelSearch=(e)=>{
+  const handleSearch=(e)=>{
     e.preventDefault();
     console.log('Searching ....')
   }
-  const handelApp=(e)=>{
+  const handleApp=(e)=>{
     e.preventDefault();
     console.log('Opening App ....')
   }
-  const handelNotification=(e)=>{
+  const handleNotification=(e)=>{
     e.preventDefault();
     console.log('You Have notifiaction ....')
   }
-  const handelMessage=(e)=>{
+  const handleMessage=(e)=>{
     e.preventDefault();
-    if(logoutDisply==='message-box-none'){
+    if(messageDisply==='message-box-none'){
       setMessageDisplay('message-box')
       console.log('message-box')
     }else{ 
-      setMessageDisplay('message-box')
+      setMessageDisplay('message-box-none')
       console.log('message-box-none')
     }
     console.log('opening Message ....')
@@ -84,21 +85,21 @@ const NavBar=()=>{
               samyojak
             </span>
             <div>
-              <AiFillHome size={'1.35em'} onClick={handelHome}/>
+              <AiFillHome size={'1.7em'} onClick={handleHome}/>
             </div>
             <div>
-              <AiFillAppstore size={'1.35em'} onClick={handelApp}/>
+              <AiFillAppstore size={'1.7em'} onClick={handleApp}/>
             </div>
           </div>
         </div>
         <div className="center-part">
           <div>
-            <FaSearch  size={'1.20em'} onClick={handelSearch}/>
+            <FaSearch  size={'1.20em'} onClick={handleSearch}/>
             <input placeholder="Search..."/>
           </div>
         </div>
         <div className="right-part">
-            <div className="profilepic" onClick={handelProfile}>
+            <div className="profilepic" onClick={handleProfile}>
                 <div>
                     <ProfilePic size={'30px'} image={Profilepic}/>
                 </div>
@@ -106,25 +107,30 @@ const NavBar=()=>{
             </div>
             <div className={logoutDisply}>
               <div className="logout-inner">
-                <div><AiFillCloseCircle size={'1.35em'} onClick={handelProfile}/></div>
+                <div><AiFillCloseCircle size={'1.7em'} onClick={handleProfile}/></div>
               <button onClick={handleLogout}>Logout</button>
               </div>
 
             </div>
             <div>
-                <AiFillNotification size={'1.35em'} onClick={handelNotification}/>
+              <div style={{position:'absolute',left:'0px',top:'-2px'}}><NumberIndicator/></div>
+              
+              <AiFillNotification size={'1.7em'} onClick={handleNotification}/>
             </div>
             <div>
-                <AiFillMessage size={'1.35em'} onClick={handelMessage}/>
+              <div style={{position:'absolute',left:'0px',top:'-2px'}}><NumberIndicator/></div>
+              <AiFillMessage size={'1.7em'} onClick={handleMessage}/>
             </div>
             <div>
-                <FaUserFriends size={'1.35em'} onClick={handelFriends}/>
+              <div style={{position:'absolute',left:'0px',top:'-2px'}}><NumberIndicator/></div>
+              <FaUserFriends size={'1.7em'} onClick={handleFriends}/>
             </div>
-            <div className={messageDisply}>
-            <Messagebox/>
-            </div>
+            
           
         </div>
+        <div className={messageDisply}>
+            <Messagebox handleMessage={handleMessage}/>
+            </div>
       </div>
       )
     }

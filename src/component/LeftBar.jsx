@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "./leftbar.scss"
-import ProfilePic from './ProfilePic'
+import ProfilePic from '../extracompont/ProfilePic'
 import {FaUserFriends,FaClock} from "react-icons/fa"
 import {TiGroup} from "react-icons/ti"
 import {BsFillCaretRightSquareFill} from "react-icons/bs"

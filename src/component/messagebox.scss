@@ -1,5 +1,94 @@
 .message-box-container{
-    display:block;
-    width: 338px;
-    height: 273px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+
+    .message-box-inner{
+        .event-option{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            
+            .top-options{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                background-color: #ff7233;
+                padding: 5px;
+                width:inherit;
+                height: 32px;
+                .user-detail{
+                    display: flex;
+                    flex-direction: row;
+                    .name-active{
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+                .user-detail > * {
+                    margin-right: 5px;
+                    align-self: center;
+                  }
+                .option-items{
+                    display: flex;
+                    flex-direction: row;
+                    .div-top-msbox{
+                        align-self:center;
+                        color: #424271;
+                    }
+                }
+                .option-items>*{
+                    margin-left: 10px;
+                }
+            }
+
+            .msg-area{
+                height:370px;
+                background-color: white;
+            }
+            .buttom-options{
+                background-color: #ff7233;
+                height: 50px;
+                padding-top: 10px;
+             .buttom-options-items{
+                display: flex;
+                flex-direction: row;
+                color: #424271;
+                align-content: center;
+                div{
+                    display: flex;
+                }
+                .msg-input-cont{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-content: center;
+                    width:150px;
+                    height: 25px;
+                    border: none;
+                    border-radius: 25px;
+                    background-color: rgb(230, 230, 230);
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    
+                    input{
+                        width:100px;
+                        border: none;
+                        background-color: rgb(230, 230, 230);
+                        padding: 2.5px;
+                        font-size: small;
+                    }
+                    input:focus{
+                        outline: none;
+                    }
+                }
+             }
+             .buttom-options-items>*{
+                margin-left: 5px;
+                margin-right: 5px;
+                align-self: center;
+             }
+            }
+        }
+    }
 }

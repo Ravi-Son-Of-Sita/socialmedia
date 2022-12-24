@@ -80,7 +80,12 @@
     
     
       }
-  .left-part>*{margin-right:30px; 
+  .left-part>*{
+    margin-right:25px; 
+    @include media(">phonemax","<=tablet"){
+      margin-left:15px;
+   }
+    
     @include media("<=phonemax"){
               
     margin-right:10px;
@@ -109,7 +114,7 @@
          width: 100px;
       }
       @include media(">tablet","<=desktop"){
-        width: 179px;
+        width: 129px;
           }
         input{
             border: none;
@@ -127,7 +132,7 @@
             width: 50px;
          }
          @include media(">tablet","<=desktop"){
-          width: 150px;
+          width: 100px;
             }
         }
       }
@@ -174,9 +179,10 @@
             color: #f8efeb;
             border-radius: 25px;
             cursor: pointer;
+            position: relative;
         }
         div:hover{
-          color: #575899;
+          color: #424271;
         }
         .logout-cont{
           background-color: #ff7233;
@@ -229,12 +235,27 @@
         }
     }
     .right-part>*{
-      margin-left:30px;
+      margin-left:25px;
+      @include media(">phonemax","<=tablet"){
+        margin-left:15px;
+     }
       @include media("<=phonemax"){
               
         margin-left:10px;
     
     }
+    }
+    .message-box-none{
+      display: none;
+    }
+    .message-box{
+    
+      position: fixed;
+      right: 30px;
+      bottom: 0px;
+      width: 338px;
+      max-height: 511px;
+
     }
     
   }

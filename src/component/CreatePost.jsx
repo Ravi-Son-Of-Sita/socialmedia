@@ -1,5 +1,5 @@
 import React from "react"
-import ProfilePic from "./ProfilePic"
+import ProfilePic from "../extracompont/ProfilePic"
 import './createpost.scss'
 import mediafile from "../assest/upload.png"
 
