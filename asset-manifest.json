@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/socialmedia/static/css/main.ab257cd9.css",
-    "main.js": "/socialmedia/static/js/main.6935426a.js",
+    "main.css": "/socialmedia/static/css/main.d157e878.css",
+    "main.js": "/socialmedia/static/js/main.996fb531.js",
     "static/js/787.c4e7f8f9.chunk.js": "/socialmedia/static/js/787.c4e7f8f9.chunk.js",
     "static/media/cover.jpg": "/socialmedia/static/media/cover.c30af079010cd0305796.jpg",
     "static/media/upload.png": "/socialmedia/static/media/upload.ba57c81d100eebf6c5e1.png",
     "static/media/profilepic.png": "/socialmedia/static/media/profilepic.2fda6558cd58b877e14f.png",
     "static/media/SAMARO__.woff": "/socialmedia/static/media/SAMARO__.e050b255e1ed1ea39c76.woff",
     "index.html": "/socialmedia/index.html",
-    "main.ab257cd9.css.map": "/socialmedia/static/css/main.ab257cd9.css.map",
-    "main.6935426a.js.map": "/socialmedia/static/js/main.6935426a.js.map",
+    "main.d157e878.css.map": "/socialmedia/static/css/main.d157e878.css.map",
+    "main.996fb531.js.map": "/socialmedia/static/js/main.996fb531.js.map",
     "787.c4e7f8f9.chunk.js.map": "/socialmedia/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ab257cd9.css",
-    "static/js/main.6935426a.js"
+    "static/css/main.d157e878.css",
+    "static/js/main.996fb531.js"
   ]
 }
