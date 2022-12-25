@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom"
 import { useContext,useState } from "react"
 import { AuthContext } from "../auth/authContext"
 import "./register.scss"
- import {FaFacebookF,FaTwitter } from "react-icons/fa"
 
 
 const Register=()=>{
@@ -48,18 +47,18 @@ const Register=()=>{
                         </div>
                         <div>
                           <div >Email Id</div>
-                          <input type="text" placeholder="User Name" name="email" onChange={handleChange}/>
+                          <input type="text" placeholder="Email Id" name="email" onChange={handleChange}/>
                         </div>
                         <div>
                           <div>Mobile No.</div>
-                          <input type="password" placeholder="Password"  name="mno" onChange={handleChange}/>
+                          <input type="password" placeholder='Mobile No.' name="mno" onChange={handleChange}/>
                         </div>
                         <div>
-                          <div >USERNAME</div>
+                          <div >User Name</div>
                           <input type="text" placeholder="User Name" name="username" onChange={handleChange}/>
                         </div>
                         <div>
-                          <div>PASSWORD</div>
+                          <div>Password</div>
                           <input type="password" placeholder="Password"  name="password" onChange={handleChange}/>
                         </div>    
                     </div>

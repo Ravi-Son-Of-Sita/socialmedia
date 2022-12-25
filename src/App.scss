@@ -8,6 +8,7 @@
   display:flex;
   flex-direction: column;
   position: relative;
+  max-height: calc(100vh - 20px);
   .navbar{
     position:fixed;
     top: 0px;
@@ -23,6 +24,7 @@
     padding-right: 20px;
     background-color: rgb(255, 255, 255);
     min-width:calc(100vw - 50px);
+    max-height: calc(100vh - 100px);
 
     @include media("<=phonemax"){
       padding: auto;

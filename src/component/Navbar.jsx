@@ -5,7 +5,7 @@ import "./navbar.scss"
 import { AuthContext } from "../auth/authContext"
 import Profilepic from "../assest/profilepic.png"
 import ProfilePic from "../extracompont/ProfilePic"
-import Messagebox from "./Messagebox"
+import Messagebox from "../extracompont/Messagebox"
 import NumberIndicator from "../extracompont/NumberIndicator"
 
 import {AiFillCloseCircle,AiFillHome,AiFillAppstore,AiFillNotification,AiFillMessage} from "react-icons/ai"
@@ -76,7 +76,7 @@ const NavBar=()=>{
         <div className="icon-container">
               <div className="icon-mid-container">
                 <span className="s">
-                  s
+                 स
                 </span>
               </div>
             </div>

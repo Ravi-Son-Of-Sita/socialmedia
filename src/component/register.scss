@@ -51,44 +51,32 @@
                     width: 100%;
                     align-self: center;
                 }
-                .facebook-twitter{
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: flex-end;
-                    width: 100%;
-                    div{
-                        border-radius: 50%;
-                        background-color: #f000;
-                        width: 35px;
-                        height: 35px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        border: 1px solid rgba(0, 0, 0, 0.05);
-                        color: #b3b3b3;
-                        margin-left: 6px;
-                    }
-                    div:hover{
-                        color:#ff9933;
-                        border: 1px solid #ff9933
-                    }
-                }
-            
             }
             .inputlogin{
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
                 align-self: center;
-                input{
-                    border: none;
-                    border-radius: 10px;
-                    padding: 5px;
-                    background-color: rgb(243, 242, 242);
-                    height: 30px;
-                    width: 200px;
-                }
+                div{
+                    display: flex;
+                    flex-direction: row;
+                    align-content: center;
 
+                    div{
+                        min-width:100px;
+                        margin-left: 10px;
+                    }
+                    input{
+                        border: none;
+                        border-radius: 10px;
+                        padding: 5px;
+                        background-color: rgb(243, 242, 242);
+                        height: 30px;
+                        width: 100%;
+                    }
+    
+                }
+                
             }
             .loginbutton{
                 display: flex;

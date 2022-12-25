@@ -5,7 +5,7 @@ import{AiFillPlusCircle,AiFillLike,AiFillCloseCircle} from "react-icons/ai"
 import{GoFileMedia} from "react-icons/go"
 import{RiFileGifFill} from "react-icons/ri"
 import {BsEmojiSmileFill} from "react-icons/bs"
-import ProfilePic from '../extracompont/ProfilePic'
+import ProfilePic from './ProfilePic'
 import "./messagebox.scss"
 
 function Messagebox({handleMessage}) {
