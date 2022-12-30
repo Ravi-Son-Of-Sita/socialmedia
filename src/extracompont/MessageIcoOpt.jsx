@@ -9,7 +9,7 @@ const MessageIcoOpt = () => {
 
     const messages=messagelist.map((k)=>
 
-    <div className='messages-list' key={k.toString()} style={{margin:'5px'}}>
+    <div className='messages-list' key={k.toString()} style={{margin:'5px'}} onClick="">
             <div>
                 <ProfilePic size={'25px'}/>
             </div>
@@ -22,6 +22,11 @@ const MessageIcoOpt = () => {
         <div className='messagelist-cont'>
             <div className="upper-part">
             {messages}
+            </div>
+            <div className="lower-part">
+                <span>
+                    See All {'>>>'}
+                </span>
             </div>
         </div>
     );
