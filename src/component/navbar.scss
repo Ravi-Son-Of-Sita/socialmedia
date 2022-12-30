@@ -225,14 +225,6 @@
         .logout-none{
           display: none;
         }
-
-        .message-box-none{
-          display: none;
-        }
-        .message-box{
-          display: block;
-          position: absolute;
-        }
     }
     .right-part>*{
       margin-left:25px;
@@ -251,10 +243,11 @@
     .message-box{
     
       position: fixed;
-      right: 30px;
-      bottom: 0px;
-      width: 338px;
-      max-height: 511px;
+      right:0px;
+      top: 45px;
+      width:30%;
+      max-height:100px;
+      background-color: #ff7233;
 
     }
     

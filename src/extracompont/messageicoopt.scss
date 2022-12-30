@@ -1,15 +1,23 @@
   .messagelist-cont{
     display: flex;
-    flex-direction: column;
+    flex-direction: column;  
   .upper-part{
         display: flex;
         flex-direction: column;
+        overflow-y: scroll;
+        max-width: 50px;
+        max-height: 75px;
         .messages-list{
             display: flex;
             flex-direction: row;
+
+
             div{
                 margin-bottom: 5px;
             }
+        }
+        .messages-list>*{
+          margin-right: 5px;
         }
     }
   }
