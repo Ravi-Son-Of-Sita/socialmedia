@@ -173,7 +173,7 @@
           margin-right: 10px;
           cursor: pointer;
         }
-        div{
+        .icons-nav{
             display: flex;
             align-self: center;
             color: #f8efeb;
@@ -181,7 +181,7 @@
             cursor: pointer;
             position: relative;
         }
-        div:hover{
+        .icons-nav:hover{
           color: #424271;
         }
         .logout-cont{
@@ -192,7 +192,6 @@
           top: 45px;
           width: 100px;
           height: 100px;
-          border-radius: 0px;
           .logout-inner{
             display: flex;
             flex-direction: column;
@@ -225,6 +224,18 @@
         .logout-none{
           display: none;
         }
+        .message-box-none{
+          display: none;
+        }
+        .message-box{
+        
+          position: absolute;
+          top: 45px;
+          width:20%;
+          max-height:100px;
+          background-color: #ff7233;
+    
+        }
     }
     .right-part>*{
       margin-left:25px;
@@ -237,18 +248,6 @@
     
     }
     }
-    .message-box-none{
-      display: none;
-    }
-    .message-box{
-    
-      position: fixed;
-      right:0px;
-      top: 45px;
-      width:20%;
-      max-height:100px;
-      background-color: #ff7233;
-
-    }
+   
     
   }

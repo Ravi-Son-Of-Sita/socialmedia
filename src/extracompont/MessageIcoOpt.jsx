@@ -1,6 +1,7 @@
 
 import React from 'react';
 import ProfilePic from "./ProfilePic"
+import './messageicoopt.scss'
 
 
 const MessageIcoOpt = () => {

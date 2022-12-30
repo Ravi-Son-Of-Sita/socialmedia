@@ -73,6 +73,16 @@
         }
 
     }
+    .story-viwer:hover{
+        .story{
+            .img-story{
+                width: 110%;
+                height: 110%;
+                object-fit: cover;
+                transition: 0.4s ease;
+            }
+        }
+    }
 
     .story-viwer{
         display: flex;
@@ -87,7 +97,7 @@
         .story{
             
             min-height: 200px;
-            img{
+            .img-story{
                 width: 100%;
                 height: 100%;
                 object-fit: cover;

@@ -17,7 +17,7 @@ function Story() {
 
     <div className='story-viwer' key={k.toString()} onClick={viewStory}>
         <div className='story'>
-            <img src={ravipic}/>
+            <img className='img-story' src={ravipic} alt=''/>
             <div><ProfilePic/></div>
             <div className='usr-nam'><span>profile</span></div>
             </div>

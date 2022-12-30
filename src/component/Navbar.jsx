@@ -113,25 +113,25 @@ const NavBar=()=>{
               </div>
 
             </div>
-            <div>
+            <div className="icons-nav">
               <div style={{position:'absolute',left:'0px',top:'-2px'}}><NumberIndicator/></div>
               
               <AiFillNotification size={'1.7em'} onClick={handleNotification}/>
             </div>
-            <div>
+            <div className="icons-nav">
               <div style={{position:'absolute',left:'0px',top:'-2px'}}><NumberIndicator/></div>
               <AiFillMessage size={'1.7em'} onClick={handleMessage}/>
             </div>
-            <div>
+            <div className={messageDisply}>
+            {/*<Messagebox handleMessage={handleMessage}/>*/}
+            <MessageIcoOpt/>
+        </div >
+            <div className="icons-nav">
               <div style={{position:'absolute',left:'0px',top:'-2px'}}><NumberIndicator/></div>
               <FaUserFriends size={'1.7em'} onClick={handleFriends}/>
             </div>
             
           
-        </div>
-        <div className={messageDisply}>
-            {/*<Messagebox handleMessage={handleMessage}/>*/}
-            <MessageIcoOpt/>
         </div>
       </div>
       )
