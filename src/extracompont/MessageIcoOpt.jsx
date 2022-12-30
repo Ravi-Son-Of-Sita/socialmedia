@@ -2,6 +2,7 @@
 import React from 'react';
 import ProfilePic from "./ProfilePic"
 import './messageicoopt.scss'
+import Chr from './Chr'
 
 
 const MessageIcoOpt = () => {
@@ -24,6 +25,7 @@ const MessageIcoOpt = () => {
             <div className="upper-part">
             {messages}
             </div>
+            <Chr height={'5px'}/>
             <div className="lower-part">
                 <span>
                     See All {'>>>'}
