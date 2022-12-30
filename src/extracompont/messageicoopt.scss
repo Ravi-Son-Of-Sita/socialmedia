@@ -1,0 +1,15 @@
+  .messagelist-cont{
+    display: flex;
+    flex-direction: column;
+  .upper-part{
+        display: flex;
+        flex-direction: column;
+        .messages-list{
+            display: flex;
+            flex-direction: row;
+            div{
+                margin-bottom: 5px;
+            }
+        }
+    }
+  }

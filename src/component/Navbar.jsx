@@ -6,6 +6,7 @@ import { AuthContext } from "../auth/authContext"
 import Profilepic from "../assest/profilepic.png"
 import ProfilePic from "../extracompont/ProfilePic"
 import Messagebox from "../extracompont/Messagebox"
+import MessageIcoOpt from "../extracompont/MessageIcoOpt"
 import NumberIndicator from "../extracompont/NumberIndicator"
 
 import {AiFillCloseCircle,AiFillHome,AiFillAppstore,AiFillNotification,AiFillMessage} from "react-icons/ai"
@@ -129,8 +130,9 @@ const NavBar=()=>{
           
         </div>
         <div className={messageDisply}>
-            <Messagebox handleMessage={handleMessage}/>
-            </div>
+            {/*<Messagebox handleMessage={handleMessage}/>*/}
+            <MessageIcoOpt/>
+        </div>
       </div>
       )
     }
