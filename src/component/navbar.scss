@@ -227,7 +227,7 @@
         .message-box-none{
           display: none;
         }
-        .message-box{
+        .message-box-list{
         
           position: absolute;
           top: 45px;
@@ -248,6 +248,17 @@
     
     }
     }
-   
+  .message-box-none{
+    display: none;
+  }
+  .message-box{
+  
+    position: fixed;
+    right: 30px;
+    bottom: 0px;
+    width: 338px;
+    max-height: 511px;
+
+  }
     
   }

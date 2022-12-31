@@ -15,7 +15,9 @@ import { useState } from "react"
 const NavBar=()=>{
 
   const [logoutDisply, setLogoutDisplay]= useState('logout-none')
-  const [messageDisply, setMessageDisplay]= useState('message-box-none')
+  const [messageDisplyList, setMessageDisplayList]= useState('message-box-none')
+  const [messageDisplyBox, setMessageDisplayBox]= useState('message-box-none')
+
 
   const navigate = useNavigate()
 
@@ -59,13 +61,25 @@ const NavBar=()=>{
     e.preventDefault();
     console.log('You Have notifiaction ....')
   }
-  const handleMessage=(e)=>{
+  const handleMessageBox=(e)=>{
     e.preventDefault();
-    if(messageDisply==='message-box-none'){
-      setMessageDisplay('message-box')
+    if(messageDisplyBox==='message-box-none'){
+      setMessageDisplayBox('message-box')
       console.log('message-box')
     }else{ 
-      setMessageDisplay('message-box-none')
+      setMessageDisplayBox('message-box-none')
+      console.log('message-box-none')
+    }
+    console.log('opening Message ....')
+  }
+
+  const handleMessageList=(e)=>{
+    e.preventDefault();
+    if(messageDisplyList==='message-box-none'){
+      setMessageDisplayList('message-box-list')
+      console.log('message-box')
+    }else{ 
+      setMessageDisplayList('message-box-none')
       console.log('message-box-none')
     }
     console.log('opening Message ....')
@@ -120,18 +134,20 @@ const NavBar=()=>{
             </div>
             <div className="icons-nav">
               <div style={{position:'absolute',left:'0px',top:'-2px'}}><NumberIndicator/></div>
-              <AiFillMessage size={'1.7em'} onClick={handleMessage}/>
+              <AiFillMessage size={'1.7em'} onClick={handleMessageList}/>
             </div>
-            <div className={messageDisply}>
+            <div className={messageDisplyList}>
             {/*<Messagebox handleMessage={handleMessage}/>*/}
-            <MessageIcoOpt/>
-        </div >
+            <MessageIcoOpt handleMessageBox={handleMessageBox}/>
+            </div >
             <div className="icons-nav">
               <div style={{position:'absolute',left:'0px',top:'-2px'}}><NumberIndicator/></div>
               <FaUserFriends size={'1.7em'} onClick={handleFriends}/>
             </div>
             
-          
+            <div className={messageDisplyBox}>
+            <Messagebox handleMessage={handleMessageBox}/>
+            </div >
         </div>
       </div>
       )
