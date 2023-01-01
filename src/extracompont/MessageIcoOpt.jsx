@@ -13,7 +13,7 @@ const MessageIcoOpt = ({handleMessageBox}) => {
 
     <div className='messages-list' key={k.toString()} style={{margin:'5px'}} onClick={handleMessageBox}>
             <div>
-                <ProfilePic size={'25px'}/>
+                <ProfilePic size={'56px'}/>
             </div>
             <div>user Name</div>
         </div>

@@ -63,26 +63,21 @@ const NavBar=()=>{
   }
   const handleMessageBox=(e)=>{
     e.preventDefault();
-    if(messageDisplyBox==='message-box-none'){
       setMessageDisplayBox('message-box')
-      console.log('message-box')
-    }else{ 
-      setMessageDisplayBox('message-box-none')
-      console.log('message-box-none')
-    }
-    console.log('opening Message ....')
+      setMessageDisplayList('message-box-none')
+  }
+  const handleMessageBoxClose=(e)=>{
+    setMessageDisplayBox('message-box-none')
   }
 
   const handleMessageList=(e)=>{
     e.preventDefault();
     if(messageDisplyList==='message-box-none'){
       setMessageDisplayList('message-box-list')
-      console.log('message-box')
     }else{ 
       setMessageDisplayList('message-box-none')
       console.log('message-box-none')
     }
-    console.log('opening Message ....')
   }
 
     return(
@@ -137,7 +132,6 @@ const NavBar=()=>{
               <AiFillMessage size={'1.7em'} onClick={handleMessageList}/>
             </div>
             <div className={messageDisplyList}>
-            {/*<Messagebox handleMessage={handleMessage}/>*/}
             <MessageIcoOpt handleMessageBox={handleMessageBox}/>
             </div >
             <div className="icons-nav">
@@ -146,7 +140,7 @@ const NavBar=()=>{
             </div>
             
             <div className={messageDisplyBox}>
-            <Messagebox handleMessage={handleMessageBox}/>
+            <Messagebox handleMessage={handleMessageBoxClose}/>
             </div >
         </div>
       </div>
