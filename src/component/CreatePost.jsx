@@ -2,6 +2,7 @@ import React from "react"
 import ProfilePic from "../extracompont/ProfilePic"
 import './createpost.scss'
 import mediafile from "../assest/upload.png"
+import Chr from "../extracompont/Chr"
 
 
 const CreatePost =()=>{
@@ -11,7 +12,7 @@ const CreatePost =()=>{
           <div><ProfilePic/></div>
           <input type="text" placeholder="What is in your mind ?"/>
          </div>
-         <hr/>
+         <Chr/>
          <div className="post-lower">
           
           <div>

@@ -5,10 +5,13 @@
     display: flex;
     flex-direction: column;  
     width: 360px;
-    max-height: 560px;
+    max-height: 460px;
     @include media("<=phonemax"){
       width: 260px;
     }
+    border-radius: 0px 0px 5px 5px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px 1px;
   .upper-part{
         display: flex;
         flex-direction: column;
@@ -37,5 +40,18 @@
     }
   .lower-part{
     background-color: white;
+    display: flex;
+    justify-content: center;
+    min-height: 45px;
+    span{
+      align-self: center;
+  font-size: 16px;
+  font-weight: bold;
+    }
+    span:hover{
+      font-weight:300;
+      font-size: 20px;
+      cursor: pointer;
+    }
   }
   }

@@ -6,6 +6,7 @@ import {FaUserFriends,FaClock} from "react-icons/fa"
 import {TiGroup} from "react-icons/ti"
 import {BsFillCaretRightSquareFill} from "react-icons/bs"
 import {AiFillDownCircle} from "react-icons/ai"
+import Chr from '../extracompont/Chr'
 
 function LeftBar() {
   const linkStyl={
@@ -70,9 +71,9 @@ function LeftBar() {
 
 
         </div>
-        <hr/>
+        <Chr/>
         <div className="middle-part">middle</div>
-        <hr/>
+        <Chr/>
         <div className="bottom-part">bottom</div>
       </div>
     </div>

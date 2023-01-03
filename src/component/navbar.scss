@@ -149,16 +149,23 @@
             justify-content: center;
             align-self: center;
             margin-right: 10px;
+            
             div{
                 width: 30px;
                 height: 30px;
                 border-radius: 25px;
                 overflow: hidden;
+                align-self: center;
                 
             }
             span{
                 align-self: center;
                 color: #f8efeb;
+                @include media(">tablet","<=desktop"){
+                  font-size: 14px;
+                  max-height: 35px;
+                  width: 45%;
+               }
                 @include media(">phonemax","<=tablet"){
                   display: none;
                }
@@ -232,7 +239,7 @@
           position: absolute;
           top: 45px;
           right: 20px;
-          background-color: #ff7233;
+          z-index: 2;
     
         }
     }

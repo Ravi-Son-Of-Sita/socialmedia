@@ -16,16 +16,10 @@
         height: 100vh;
         
         @include media(">phonemax","<=tablet"){
-            width: 200px;
+            width: 100px;
             padding-left: 10px;
           }
-        
-        hr{
-            min-height:2px;
-            width:250px;
-            border: none;
-            background-color:rgb(233, 233, 233);
-        }
+    
         .top-part{
             display: flex;
             flex-direction: column;
@@ -48,6 +42,10 @@
                 }
                 span{
                     align-self: center;
+                    @include media("<=desktop"){
+                        display: none;
+                      }
+
                 }
             }
         }

@@ -5,6 +5,7 @@
     padding:10px;
     overflow-x: scroll;
     height: calc(100vh - 50px);
+    background-color: #f1edff;
     @include media("<=phonemax"){
         padding: auto;
     }
