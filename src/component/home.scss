@@ -4,7 +4,7 @@
     display: block;
     padding:10px;
     overflow-x: scroll;
-    height: 100vh;
+    height: calc(100vh - 50px);
     @include media("<=phonemax"){
         padding: auto;
     }

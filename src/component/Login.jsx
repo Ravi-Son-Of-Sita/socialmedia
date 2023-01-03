@@ -28,8 +28,10 @@ const Login=()=>{
     }
 
   const handleLogin = async (e) => {
+    
     try {
-      await login();
+    e.preventDefault();
+      login();
       navigate("/");
       console.log("reach here");
     } catch (err) {

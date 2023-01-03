@@ -47,7 +47,8 @@ function App() {
     return children;
   };
   const route=createHashRouter([
-    {
+    { 
+      
         path:'/',
         element:(
           <Islogin><MainPage/></Islogin>
