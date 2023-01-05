@@ -4,7 +4,12 @@ import {BiLike,BiComment,BiShare} from "react-icons/bi"
 
 import ProfilePic from "../extracompont/ProfilePic"
 import './posts.scss'
+import "../commoncss.scss"
 import Postimage from '../assest/postsimage.jpg'
+import Chr from "../extracompont/Chr"
+import Comment from "../extracompont/Comment"
+import CreateComment from "../extracompont/CreateComment"
+import { useState } from 'react'
 
 
 function Posts() {
@@ -13,6 +18,10 @@ function Posts() {
 
 
 //demo-data ends
+const [commentDisplay,setCommentDisplay] =useState('display-none')
+const showComment=(e)=>{
+    setCommentDisplay('dspy-flx-cl-ac')
+}
   return (
     <div className="post-show-container">
          <div className="post-upper">
@@ -53,7 +62,7 @@ function Posts() {
                     <BiLike size={'1.35em'}/>
                     <span>like</span>
                 </div>
-                <div role={'button'}>
+                <div role={'button'} onClick={showComment}>
                     <BiComment size={'1.35em'}/>
                     <span>comment</span>
                 </div>
@@ -61,6 +70,14 @@ function Posts() {
                     <BiShare size={'1.35em'} transform={'scale(-1,1)'}/>
                     <span>share</span>
                 </div>
+            </div>
+            <Chr className={commentDisplay}/>
+            <div className={commentDisplay}>
+                <CreateComment/>
+                <Comment/>
+                
+                
+
             </div>
          </div>
       </div>
