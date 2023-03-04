@@ -7,7 +7,9 @@ import "./register.scss"
 
 const Register=()=>{
     const [inputs, setInputs] = useState({
-        username: "",
+        firstname:'',
+        lastname:'',
+        email: "",
         password: "",
       });
     //const [err, setErr] = useState(null);
@@ -17,7 +19,7 @@ const Register=()=>{
     const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
         };
-    const { login} = useContext(AuthContext);
+    const { signup} = useContext(AuthContext);
   
     const handeSignin=()=>{
         navigate("/login")
@@ -48,14 +50,6 @@ const Register=()=>{
                         <div>
                           <div >Email Id</div>
                           <input type="text" placeholder="Email Id" name="email" onChange={handleChange}/>
-                        </div>
-                        <div>
-                          <div>Mobile No.</div>
-                          <input type="password" placeholder='Mobile No.' name="mno" onChange={handleChange}/>
-                        </div>
-                        <div>
-                          <div >User Name</div>
-                          <input type="text" placeholder="User Name" name="username" onChange={handleChange}/>
                         </div>
                         <div>
                           <div>Password</div>

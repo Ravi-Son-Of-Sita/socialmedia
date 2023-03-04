@@ -9,11 +9,14 @@ const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(localStorage.getItem("users")) || null
   );
+  const signup =async (inputs) => {
+    const res =await createUserWithEmailAndPassword(auth, inputs.email, inputs.password)
+    setCurrentUser(res.user.uid)
+  }
   const login = async (inputs) => {
     const res = await signInWithEmailAndPassword(auth,inputs.username,inputs.password);
 
     setCurrentUser(res.user.uid)
-    console.log(currentUser)
   };
 
   /* const login = async () => {
@@ -23,7 +26,7 @@ const AuthContextProvider = ({ children }) => {
   } */
   const logout = async (inputs) => {
     
-    setCurrentUser(false)
+    setCurrentUser(null)
   }
 
 

@@ -21,7 +21,6 @@ function App() {
   const { currentUser } = useContext(AuthContext);
   const [user,loading,error]=useAuthState(auth)
   useEffect(()=>{
-
   },[currentUser])
   const MainPage=()=>{
     return(
