@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import {createHashRouter,createBrowserRouter,RouterProvider,Navigate,Outlet} from "react-router-dom"
 
 
@@ -13,11 +13,16 @@ import Profile from "./component/Profile";
 import Friends from "./component/Friends";
 import Register from "./component/Register";
 import ForgotPassword from "./component/ForgotPassword";
-
+import {useAuthState} from "react-firebase-hooks/auth"
 import Login from './component/Login';
+import { auth } from './firebase';
 
 function App() {
   const { currentUser } = useContext(AuthContext);
+  const [user,loading,error]=useAuthState(auth)
+  useEffect(()=>{
+
+  },[currentUser])
   const MainPage=()=>{
     return(
       <div className='full-layout'>

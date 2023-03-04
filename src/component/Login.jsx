@@ -31,7 +31,7 @@ const Login=()=>{
     
     try {
     e.preventDefault();
-      login();
+      await login(inputs);
       navigate("/");
       console.log("reach here");
     } catch (err) {
