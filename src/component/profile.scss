@@ -3,5 +3,37 @@
 .profile-page {
     display: flex;
     flex-direction: column;
-    align-content: center;
+    align-self: center;
+    .profile-container{
+
+      .profile-name{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .profile-pic{
+          position: relative;
+
+
+          .edit-icon{
+            background-color: #ff7233;
+            border-radius: 50%;
+            position: absolute;
+            right: 5%;
+            bottom: 5%;
+            width: fit-content;
+            height: fit-content;
+            height: 20%;
+            width: 20%;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+          }
+        }
+
+      }
+      .profile-name>*{
+        align-self: center;
+        margin-top: 10px;
+      }
+    }
   }

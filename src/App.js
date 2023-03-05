@@ -20,10 +20,23 @@ import RegConf from './component/RegConf';
 
 
 function App() {
-  const { currentUser } = useContext(AuthContext);
+  const { setCurrentUser } = useContext(AuthContext);
   const [user,loading,error]=useAuthState(auth)
   useEffect(()=>{
   },[user])
+  console.log(user)
+
+  const UserLogged = ({ children }) => {
+
+    if (user) {
+      console.log('i am stuck')
+      return <Navigate to='/'/>;
+    }
+    console.log('i am out')
+
+    return children;
+  };
+
   const MainPage=()=>{
     return(
       <div className='full-layout'>
@@ -33,6 +46,25 @@ function App() {
     </div>
     )
   }
+  const EmailVerified=()=>{
+    return(
+      <>
+      {
+        !user.emailVerified?(
+          <div>
+      <span>
+      Please verify your email
+      </span>
+      
+      </div>
+        ):(
+          <MainPage/>
+        )
+      }
+      </>
+    )
+  }
+
   const HomePageCont=()=>{
     return(
       <div className='layout-home'>
@@ -57,7 +89,7 @@ function App() {
       
         path:'/',
         element:(
-          <Islogin><MainPage/></Islogin>
+          <Islogin><EmailVerified/></Islogin>
         ),
     children:[
       {
@@ -84,7 +116,9 @@ function App() {
   },
   {
       path:'/login',
-      element:<Login/>
+      element:(
+      <Login/>
+      )
   },
   {
       path:'/forgotpass',
@@ -110,5 +144,6 @@ function App() {
 
   );
 }
+
 
 export default App;

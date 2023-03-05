@@ -5,8 +5,9 @@ import ProfilePic from '../extracompont/ProfilePic'
 import {FaUserFriends,FaClock} from "react-icons/fa"
 import {TiGroup} from "react-icons/ti"
 import {BsFillCaretRightSquareFill} from "react-icons/bs"
-import {AiFillDownCircle} from "react-icons/ai"
+import {AiFillDownCircle,AiFillRightCircle} from "react-icons/ai"
 import Chr from '../extracompont/Chr'
+import ToggleButton from '../extracompont/ToggleButton'
 import { AuthContext } from "../auth/authContext"
 import { useContext,useState } from "react"
 
@@ -14,7 +15,12 @@ function LeftBar() {
   const linkStyl={
     textDecoration:'none' ,color:'#ff7233'
   }
+  const [toggle, setToggle]=useState(false)
   const {currentUser} = useContext(AuthContext);
+
+  const toggleHandle=(e)=>{
+    !toggle?setToggle(true):setToggle(false)
+  }
   return (
     <div className="left-bar">
       <div className='left-bar-cont'>
@@ -65,7 +71,7 @@ function LeftBar() {
           <div>
             <Link   to='' style={linkStyl}>
               <div className='link-con'>
-                <div className='icon-con'><AiFillDownCircle size={'1.75em'}/></div>
+                <div className='icon-con' onClick={toggleHandle}><ToggleButton toggle={toggle} toggleOn={<AiFillRightCircle size={'1.75em'}/>} toggleOff={<AiFillDownCircle size={'1.75em'}/>}/></div>
                 <span>More</span>
               </div>
             

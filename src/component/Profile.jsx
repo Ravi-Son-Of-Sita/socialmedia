@@ -15,10 +15,16 @@ function Profile() {
           <div className='cover-pic'>
             <img src={cover} alt='cover'/>
           </div>
+          <div className='profile-pic'>
           <ProfilePic size={'150px'} image={currentUser.photoURL}/>
-          <BiCamera/>
+            <div className='edit-icon'>
+            <BiCamera size={'1.75em'} style={{alignSelf:'center'}}/>
+            </div>
+          
+          </div>
+          <span>{currentUser.displayName}</span>
         </div>
-        <span>{currentUser.displayName}</span>
+        
         <div className="profile-edit"  style={currentUser?{display:'flex'}:{display:'none'}}>
           <button> 
             <FiEdit/> 

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../firebase";
-import {sendPasswordResetEmail,signInWithEmailAndPassword,createUserWithEmailAndPassword,sendEmailVerification,updateProfile,signOut} from "@firebase/auth";
+import {browserSessionPersistence,setPersistence,sendPasswordResetEmail,signInWithEmailAndPassword,createUserWithEmailAndPassword,sendEmailVerification,updateProfile,signOut} from "@firebase/auth";
 export const AuthContext = createContext('');
 
 const AuthContextProvider = ({ children }) => {
@@ -18,10 +18,12 @@ const AuthContextProvider = ({ children }) => {
       
   }
   const login = async (inputs) => {
+    await setPersistence(auth,browserSessionPersistence)
     const res = await signInWithEmailAndPassword(auth,inputs.username,inputs.password)
     ;
 
     setCurrentUser(res.user)
+    
     console.log(currentUser)
   };
 
@@ -49,7 +51,7 @@ const AuthContextProvider = ({ children }) => {
 
 
   return (
-    <AuthContext.Provider value={{resetpassword,currentUser,signup ,login,logout}}>
+    <AuthContext.Provider value={{resetpassword,setCurrentUser,currentUser,signup ,login,logout}}>
       {children}
     </AuthContext.Provider>
   );
