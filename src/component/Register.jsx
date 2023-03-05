@@ -7,12 +7,12 @@ import "./register.scss"
 
 const Register=()=>{
     const [inputs, setInputs] = useState({
-        firstname:'',
-        lastname:'',
+        fname:'',
+        lname:'',
         email: "",
         password: "",
       });
-    //const [err, setErr] = useState(null);
+    const [err, setErr] = useState('');
 
     const navigate = useNavigate()
 
@@ -25,7 +25,16 @@ const Register=()=>{
         navigate("/login")
     }
 
-    const handleSubmit =(e) => {
+    const handleSubmit = async(e) => {
+      try {
+        e.preventDefault();
+          await signup(inputs);
+          navigate("/registertion_conform");
+          console.log("reach here");
+        } catch (err) {
+          setErr(err);
+          console.log(err.code)
+        }
           console.log('submit')
         };
 
@@ -41,7 +50,7 @@ const Register=()=>{
                         
                         <div>
                           <div >First Name</div>
-                          <input type="text" placeholder="First Name" name="fnamr" onChange={handleChange}/>
+                          <input type="text" placeholder="First Name" name="fname" onChange={handleChange}/>
                         </div>
                         <div>
                           <div>Last Name</div>
@@ -57,8 +66,9 @@ const Register=()=>{
                         </div>    
                     </div>
                     <div className="loginbutton">
-                        <button onClick={handleSubmit}>Submit</button>
+                        <button onClick={handleSubmit} disabled={!inputs.fname || !inputs.email ||!inputs.password}>Submit</button>
                     </div>
+                    <div>{err.code}</div>
 
 
                 </div>

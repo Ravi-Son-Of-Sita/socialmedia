@@ -1,6 +1,26 @@
 import React from 'react'
+import { AuthContext } from '../auth/authContext'
+import { useContext,useState } from "react"
+
 
 function ForgotPassword() {
+  const [email, setEmail] = useState()
+  const [err, setErr] = useState('');
+  const [linksent,setLinksent]=useState(false)
+  const { resetpassword} = useContext(AuthContext);
+  const handleChange = (e) => {
+    setEmail(e.target.value);
+        };
+
+    const handleSubmit=async (e) =>{
+      try{
+      await resetpassword(email)
+        setLinksent(true)
+      }catch (err){
+        setErr(err)
+        console.log(err.message)
+      }
+    }
   return (
     <div>
       <div>
@@ -10,11 +30,15 @@ function ForgotPassword() {
         <label>
           Email Adress
         </label>
-        <input type="text" placeholder='enter email here' />
+        <input type="text" placeholder='enter email here' onChange={handleChange}/>
       </div>
-      <button> Submit </button>
+      
+      <button onClick={handleSubmit}> Submit </button>
       </div>
       <label>Back To Login</label>
+      <div>
+        {!linksent?<p>{err.message}</p>:<p>Password Reset link has been sent to your Email.</p>}
+      </div>
       
 
     </div>

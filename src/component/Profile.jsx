@@ -15,10 +15,10 @@ function Profile() {
           <div className='cover-pic'>
             <img src={cover} alt='cover'/>
           </div>
-          <ProfilePic size={'150px'}/>
+          <ProfilePic size={'150px'} image={currentUser.photoURL}/>
           <BiCamera/>
         </div>
-        <span>Ravi Ranjan Kumar</span>
+        <span>{currentUser.displayName}</span>
         <div className="profile-edit"  style={currentUser?{display:'flex'}:{display:'none'}}>
           <button> 
             <FiEdit/> 

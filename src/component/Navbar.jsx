@@ -8,7 +8,6 @@ import ProfilePic from "../extracompont/ProfilePic"
 import Messagebox from "../extracompont/Messagebox"
 import MessageIcoOpt from "../extracompont/MessageIcoOpt"
 import NumberIndicator from "../extracompont/NumberIndicator"
-
 import {AiFillCloseCircle,AiFillHome,AiFillAppstore,AiFillNotification,AiFillMessage} from "react-icons/ai"
 import{FaUserFriends,FaSearch} from "react-icons/fa"
 import { useState } from "react"
@@ -17,6 +16,7 @@ const NavBar=()=>{
   const [logoutDisply, setLogoutDisplay]= useState('logout-none')
   const [messageDisplyList, setMessageDisplayList]= useState('message-box-none')
   const [messageDisplyBox, setMessageDisplayBox]= useState('message-box-none')
+  const { currentUser} = useContext(AuthContext);
 
 
   const navigate = useNavigate()
@@ -111,9 +111,9 @@ const NavBar=()=>{
         <div className="right-part">
             <div className="profilepic" onClick={handleProfile}>
                 <div>
-                    <ProfilePic size={'30px'} image={Profilepic}/>
+                    <ProfilePic size={'30px'} image={currentUser.photoURL}/>
                 </div>
-                <span>Ravi Ranjan Kumar</span>
+                <span>{currentUser.displayName}</span>
             </div>
             <div className={logoutDisply}>
               <div className="logout-inner">

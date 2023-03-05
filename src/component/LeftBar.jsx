@@ -7,19 +7,22 @@ import {TiGroup} from "react-icons/ti"
 import {BsFillCaretRightSquareFill} from "react-icons/bs"
 import {AiFillDownCircle} from "react-icons/ai"
 import Chr from '../extracompont/Chr'
+import { AuthContext } from "../auth/authContext"
+import { useContext,useState } from "react"
 
 function LeftBar() {
   const linkStyl={
     textDecoration:'none' ,color:'#ff7233'
   }
+  const {currentUser} = useContext(AuthContext);
   return (
     <div className="left-bar">
       <div className='left-bar-cont'>
         <div className="top-part">
           <div><Link   to='/profile' style={linkStyl}>
             <div className='link-con'>
-            <div className='icon-con'><ProfilePic  size={'2em'}/></div>
-          <span>Ravi Ranjan Kumar</span>
+            <div className='icon-con'><ProfilePic  size={'2em'} image={currentUser.photoURL}/></div>
+          <span>{currentUser.displayName}</span>
             </div>
           
           </Link></div>

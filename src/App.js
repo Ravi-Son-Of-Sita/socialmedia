@@ -1,6 +1,7 @@
 import { useContext, useEffect } from 'react';
 import {createHashRouter,createBrowserRouter,RouterProvider,Navigate,Outlet} from "react-router-dom"
-
+import { auth } from './firebase';
+import {useAuthState} from "react-firebase-hooks/auth"
 
 import './App.scss'
 import "./assest/SAMARO__.woff"
@@ -13,15 +14,16 @@ import Profile from "./component/Profile";
 import Friends from "./component/Friends";
 import Register from "./component/Register";
 import ForgotPassword from "./component/ForgotPassword";
-import {useAuthState} from "react-firebase-hooks/auth"
 import Login from './component/Login';
-import { auth } from './firebase';
+import RegConf from './component/RegConf';
+
+
 
 function App() {
   const { currentUser } = useContext(AuthContext);
   const [user,loading,error]=useAuthState(auth)
   useEffect(()=>{
-  },[currentUser])
+  },[user])
   const MainPage=()=>{
     return(
       <div className='full-layout'>
@@ -42,7 +44,7 @@ function App() {
   }
   const Islogin = ({ children }) => {
 
-    if (!currentUser) {
+    if (!user) {
       console.log('i am stuck')
       return <Navigate to='/login'/>;
     }
@@ -85,13 +87,17 @@ function App() {
       element:<Login/>
   },
   {
-      path:'forgotpass',
+      path:'/forgotpass',
       element:<ForgotPassword/>
 
   },
   {
-      path:'register',
+      path:'/register',
       element:<Register/>
+  },
+  {
+    path:'/registertion_conform',
+    element:<RegConf/>
   }
 ]);
   
