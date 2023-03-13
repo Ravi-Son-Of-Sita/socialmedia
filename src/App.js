@@ -2,7 +2,6 @@ import { useContext, useEffect } from 'react';
 import {createHashRouter,createBrowserRouter,RouterProvider,Navigate,Outlet} from "react-router-dom"
 import { auth } from './firebase';
 import {useAuthState} from "react-firebase-hooks/auth"
-
 import './App.scss'
 import "./assest/SAMARO__.woff"
 import HomePage from './component/home';
@@ -16,26 +15,21 @@ import Register from "./component/Register";
 import ForgotPassword from "./component/ForgotPassword";
 import Login from './component/Login';
 import RegConf from './component/RegConf';
+import ErrorPage from './extracompont/ErrorPage';
+import Spinner from './extracompont/Spinner';
 
 
 
 function App() {
-  const { setCurrentUser } = useContext(AuthContext);
+  const {currentUser,setCurrentUser} = useContext(AuthContext);
   const [user,loading,error]=useAuthState(auth)
+
+  
   useEffect(()=>{
-  },[user])
-  console.log(user)
-
-  const UserLogged = ({ children }) => {
-
-    if (user) {
-      console.log('i am stuck')
-      return <Navigate to='/'/>;
-    }
-    console.log('i am out')
-
-    return children;
-  };
+    setCurrentUser(user)
+    console.log('im in setUser')
+    console.log(currentUser)
+  },[user,loading])
 
   const MainPage=()=>{
     return(
@@ -80,6 +74,7 @@ function App() {
       console.log('i am stuck')
       return <Navigate to='/login'/>;
     }
+    
     console.log('i am out')
 
     return children;
@@ -91,47 +86,52 @@ function App() {
         element:(
           <Islogin><EmailVerified/></Islogin>
         ),
+        errorElement:<ErrorPage/>,
     children:[
       {
         path:'/profile',
         element:<Profile/>,
+        errorElement:<ErrorPage/>,
       },
       {
         path:'/',
         element:<HomePageCont/>,
+        errorElement:<ErrorPage/>,
         children:[
           {
-            path:'/',
+            path:'/home',
             element:<HomePage/>,
-          },
-          {
-              path:'/friends',
-              element:<Friends/>
+            errorElement:<ErrorPage/>,
           },
         ]
-      }, 
-    
+      },
+      {
+        path:'/friends',
+        element:<Friends/>,
+        errorElement:<ErrorPage/>,
+    },   
   ]
-    
-  },
+    },
   {
       path:'/login',
-      element:(
-      <Login/>
-      )
+      element:<Login/>,
+      errorElement:<ErrorPage/>,
   },
   {
       path:'/forgotpass',
-      element:<ForgotPassword/>
+      element:<ForgotPassword/>,
+      errorElement:<ErrorPage/>,
 
   },
   {
       path:'/register',
-      element:<Register/>
+      element:<Register/>,
+      errorElement:<ErrorPage/>,
   },
   {
     path:'/registertion_conform',
-    element:<RegConf/>
+    element:<RegConf/>,
+    errorElement:<ErrorPage/>,
   }
 ]);
   
@@ -139,11 +139,9 @@ function App() {
   return ( 
     
     <div>
-      <RouterProvider router={route} />
+      <RouterProvider router={route} fallbackElement={<Spinner/>}/>
     </div>
 
   );
 }
-
-
 export default App;

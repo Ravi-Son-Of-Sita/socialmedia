@@ -47,7 +47,7 @@ const NavBar=()=>{
   }
   const handleHome=(e)=>{
     e.preventDefault();
-    navigate('/')
+    navigate('/home')
   }
   const handleSearch=(e)=>{
     e.preventDefault();
@@ -86,7 +86,7 @@ const NavBar=()=>{
         <div className="icon-container">
               <div className="icon-mid-container">
                 <span className="s">
-                 स
+                  S
                 </span>
               </div>
             </div>

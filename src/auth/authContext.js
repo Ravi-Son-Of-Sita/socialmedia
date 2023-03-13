@@ -1,13 +1,16 @@
-import axios from "axios";
 import { createContext, useEffect, useState } from "react";
-import { auth } from "../firebase";
 import {browserSessionPersistence,setPersistence,sendPasswordResetEmail,signInWithEmailAndPassword,createUserWithEmailAndPassword,sendEmailVerification,updateProfile,signOut} from "@firebase/auth";
+import { auth } from "../firebase";
+
+
+
 export const AuthContext = createContext('');
 
 const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(
-    JSON.parse(localStorage.getItem("users")) || null
+   auth.currentUser  || null
   );
+  const [error, setError] = useState(null)
   const signup =async (inputs) => {
     var displayname=inputs.fname+' ' + inputs.lname
    const res =await createUserWithEmailAndPassword(auth, inputs.email, inputs.password)
@@ -19,12 +22,22 @@ const AuthContextProvider = ({ children }) => {
   }
   const login = async (inputs) => {
     await setPersistence(auth,browserSessionPersistence)
-    const res = await signInWithEmailAndPassword(auth,inputs.username,inputs.password)
-    ;
+      .then(()=>{
+        return signInWithEmailAndPassword(auth,inputs.username,inputs.password)
+      }).then((res)=>{
+        setCurrentUser(res.user)
+        console.log(currentUser)
+      }).catch((error) => {
+    // Handle Errors here.
+    setError(error.code)
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  })
+    //const res = await signInWithEmailAndPassword(auth,inputs.username,inputs.password)
 
-    setCurrentUser(res.user)
+    //setCurrentUser(res.user)
     
-    console.log(currentUser)
+    //console.log(currentUser)
   };
 
   /* const login = async () => {
@@ -44,14 +57,8 @@ const AuthContextProvider = ({ children }) => {
   }
 
 
-  useEffect(() => {
-    //localStorage.setItem("user", JSON.stringify(currentUser));
-    console.log('useEffect is working');
-  },[currentUser]);
-
-
   return (
-    <AuthContext.Provider value={{resetpassword,setCurrentUser,currentUser,signup ,login,logout}}>
+    <AuthContext.Provider value={{error,resetpassword,setCurrentUser,currentUser,signup ,login,logout}}>
       {children}
     </AuthContext.Provider>
   );

@@ -18,7 +18,7 @@ const Login=()=>{
     const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
         };
-    const { login} = useContext(AuthContext);
+    const { login,error} = useContext(AuthContext);
     
     const handelForgot=()=>{
         navigate("/forgotpass")
@@ -31,11 +31,12 @@ const Login=()=>{
     
     try {
     e.preventDefault();
-      await login(inputs);
-      navigate("/");
+     await login(inputs);
+     navigate('/')
       console.log("reach here");
     } catch (err) {
       setErr(err);
+      console.log(err)
     }
   };
 
@@ -72,6 +73,9 @@ const Login=()=>{
                         <div className="forgot" onClick={handelForgot}>
                             forgot password
                         </div>
+                    </div>
+                    <div style={{alignSelf:'center', color:'red'}}>
+                            {error}
                     </div>
 
                 </div>
