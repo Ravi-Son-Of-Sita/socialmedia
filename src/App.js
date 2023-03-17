@@ -26,9 +26,6 @@ function App() {
 
   
   useEffect(()=>{
-    setCurrentUser(user)
-    console.log('im in setUser')
-    console.log(currentUser)
   },[user,loading])
 
   const MainPage=()=>{
