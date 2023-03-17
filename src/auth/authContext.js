@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import {browserSessionPersistence,setPersistence,sendPasswordResetEmail,signInWithEmailAndPassword,createUserWithEmailAndPassword,sendEmailVerification,updateProfile,signOut} from "@firebase/auth";
 import { auth } from "../firebase";
+import ProfileCreate from "../database/profileDB";
 
 
 
@@ -14,9 +15,11 @@ const AuthContextProvider = ({ children }) => {
   const signup =async (inputs) => {
     var displayname=inputs.fname+' ' + inputs.lname
    const res =await createUserWithEmailAndPassword(auth, inputs.email, inputs.password)
-       updateProfile(auth.currentUser,{displayName:displayname,photoURL:'https://firebasestorage.googleapis.com/v0/b/samyojak-connecting.appspot.com/o/default%2Fprofilepic.png?alt=media&token=f58f2c55-e01e-4f88-8168-15760dfbfcf2'})
+       await updateProfile(auth.currentUser,{displayName:displayname,photoURL:'https://firebasestorage.googleapis.com/v0/b/samyojak-connecting.appspot.com/o/default%2Fprofilepic.png?alt=media&token=f58f2c55-e01e-4f88-8168-15760dfbfcf2'})
       console.log('after upadte')
-      sendEmailVerification(auth.currentUser)
+     // sendEmailVerification(auth.currentUser)
+      await ProfileCreate(auth.currentUser.uid,auth.currentUser.displayName,auth.currentUser.email)
+      console.log('profile added')
 
       
   }
