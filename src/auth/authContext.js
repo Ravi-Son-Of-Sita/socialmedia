@@ -17,7 +17,7 @@ const AuthContextProvider = ({ children }) => {
    const res =await createUserWithEmailAndPassword(auth, inputs.email, inputs.password)
        await updateProfile(auth.currentUser,{displayName:displayname,photoURL:'https://firebasestorage.googleapis.com/v0/b/samyojak-connecting.appspot.com/o/default%2Fprofilepic.png?alt=media&token=f58f2c55-e01e-4f88-8168-15760dfbfcf2'})
       console.log('after upadte')
-     // sendEmailVerification(auth.currentUser)
+      sendEmailVerification(auth.currentUser)
       await ProfileCreate(auth.currentUser.uid,auth.currentUser.displayName,auth.currentUser.email)
       console.log('profile added')
 
