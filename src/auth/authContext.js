@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import {browserSessionPersistence,setPersistence,sendPasswordResetEmail,signInWithEmailAndPassword,createUserWithEmailAndPassword,sendEmailVerification,updateProfile,signOut} from "@firebase/auth";
+import {browserSessionPersistence,setPersistence,sendPasswordResetEmail,signInWithEmailAndPassword,createUserWithEmailAndPassword,sendEmailVerification,updateProfile,signOut,onAuthStateChanged} from "@firebase/auth";
 import { auth } from "../firebase";
 import ProfileCreate from "../database/profileDB";
 
@@ -8,9 +8,7 @@ import ProfileCreate from "../database/profileDB";
 export const AuthContext = createContext('');
 
 const AuthContextProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(
-   auth.currentUser  || null
-  );
+  const [currentUser, setCurrentUser] = useState('');
   const [error, setError] = useState(null)
   const signup =async (inputs) => {
     var displayname=inputs.fname+' ' + inputs.lname
@@ -36,21 +34,11 @@ const AuthContextProvider = ({ children }) => {
     const errorCode = error.code;
     const errorMessage = error.message;
   })
-    //const res = await signInWithEmailAndPassword(auth,inputs.username,inputs.password)
-
-    //setCurrentUser(res.user)
-    
-    //console.log(currentUser)
   };
 
-  /* const login = async () => {
-    console.log('im in loging')
-    setCurrentUser(true)
-    console.log(currentUser)
-  } */
   const logout = async (inputs) => {
     await signOut(auth)
-    //setCurrentUser(null)
+    setCurrentUser(null)
   }
 
   const resetpassword = async (email)=>{
@@ -58,6 +46,9 @@ const AuthContextProvider = ({ children }) => {
      console.log(email)
     
   }
+ /* auth.onAuthStateChanged((user)=>{
+    setCurrentUser(user)
+  })*/
 
 
   return (

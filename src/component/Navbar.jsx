@@ -47,7 +47,7 @@ const NavBar=()=>{
   }
   const handleHome=(e)=>{
     e.preventDefault();
-    navigate('/home')
+    navigate('/')
   }
   const handleSearch=(e)=>{
     e.preventDefault();

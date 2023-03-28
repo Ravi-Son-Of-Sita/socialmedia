@@ -1,7 +1,8 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect,useLayoutEffect ,useState} from 'react';
 import {createHashRouter,createBrowserRouter,RouterProvider,Navigate,Outlet} from "react-router-dom"
 import { auth } from './firebase';
 import {useAuthState} from "react-firebase-hooks/auth"
+import {onAuthStateChanged}from'firebase/auth'
 import './App.scss'
 import "./assest/SAMARO__.woff"
 import HomePage from './component/home';
@@ -20,13 +21,16 @@ import Spinner from './extracompont/Spinner';
 
 
 
+
 function App() {
   const {currentUser,setCurrentUser} = useContext(AuthContext);
-  const [user,loading,error]=useAuthState(auth)
+  //const [user,loading,error]=useAuthState(auth)
+  const [loading,setLoading] =useState(true)
+  useLayoutEffect(() => {
+  onAuthStateChanged(auth, async(user) =>await setCurrentUser(user))
+  setLoading(false)
+}, []);
 
-  
-  useEffect(()=>{
-  },[user,loading])
 
   const MainPage=()=>{
     return(
@@ -41,15 +45,16 @@ function App() {
     return(
       <>
       {
-        !user.emailVerified?(
+        !currentUser.emailVerified?(
           <div>
       <span>
       Please verify your email
       </span>
       
       </div>
-        ):(
-          <MainPage/>
+        ):(<>
+            {!loading?(<MainPage/>):(<Spinner/>)}
+          </>
         )
       }
       </>
@@ -67,9 +72,10 @@ function App() {
   }
   const Islogin = ({ children }) => {
 
-    if (!user) {
+    if (!currentUser) {
       console.log('i am stuck')
-      return <Navigate to='/login'/>;
+      console.log(currentUser)
+      return <Login/>;
     }
     
     console.log('i am out')
@@ -78,8 +84,6 @@ function App() {
   };
   const route=createHashRouter([
     { 
-      
-        path:'/',
         element:(
           <Islogin><EmailVerified/></Islogin>
         ),
@@ -91,12 +95,11 @@ function App() {
         errorElement:<ErrorPage/>,
       },
       {
-        path:'/',
         element:<HomePageCont/>,
         errorElement:<ErrorPage/>,
         children:[
           {
-            path:'/home',
+            path:'/',
             element:<HomePage/>,
             errorElement:<ErrorPage/>,
           },

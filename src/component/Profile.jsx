@@ -6,8 +6,18 @@ import { AuthContext } from '../auth/authContext';
 import ProfilePic from "../extracompont/ProfilePic"
 import cover from "../assest/cover.jpg"
 import './profile.scss'
+import Posts from './Posts';
 function Profile() {
   const { currentUser } = useContext(AuthContext);
+  const postslist=[1,2,3,4,5,6,7]
+
+  const posts=postslist.map((k)=>
+
+  <div key={k.toString()}>
+      <Posts/>
+      </div>
+
+  );
   return (
     <div  className='profile-page'>
       <div className='profile-container'>
@@ -41,10 +51,10 @@ function Profile() {
         </div>
       </div>
       <div className='option-display'>
-        Option display
+        display
       </div>
       <div>
-
+        {posts}
       </div>
 
     </div>
