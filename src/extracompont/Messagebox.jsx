@@ -1,14 +1,21 @@
-import React from 'react'
+import React,{useState} from 'react'
 import{IoCall,IoVideocam,IoClose} from"react-icons/io5"
 import{FaMinus,FaStickyNote} from "react-icons/fa"
 import{AiFillPlusCircle,AiFillLike,AiFillCloseCircle} from "react-icons/ai"
 import{GoFileMedia} from "react-icons/go"
-import{RiFileGifFill} from "react-icons/ri"
+import{RiFileGifFill,RiSendPlane2Fill} from "react-icons/ri"
 import {BsEmojiSmileFill} from "react-icons/bs"
 import ProfilePic from './ProfilePic'
 import "./messagebox.scss"
 
 function Messagebox({handleMessage}) {
+    const [messageText,setMessageText]=useState('')
+    const [attachment,setAttachment]=useState('')
+    const messageInputHandle=(e)=>{
+        setMessageText(e.target.value)
+        console.log(messageText)
+    }
+
   return (
     <div className='message-box-container'>
         <div className="message-box-inner">
@@ -54,13 +61,16 @@ function Messagebox({handleMessage}) {
                         </div>
                         
                         <div className='msg-input-cont'>
-                            <input type="text" placeholder='Aa'/>
+                            <input type="text" placeholder='Aa' onChange={messageInputHandle}/>
                             <BsEmojiSmileFill size={'1.25em'}/>
 
                         </div>
                         
-                        <div>
-                        <AiFillLike size={'1.45em'}/>
+                        <div>{
+                            messageText?<RiSendPlane2Fill size={'1.45em'}/>:<AiFillLike size={'1.45em'}/>
+                            
+                            }
+                        
                         </div>
                     </div>
                 </div>

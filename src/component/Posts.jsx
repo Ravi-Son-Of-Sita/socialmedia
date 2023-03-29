@@ -74,6 +74,7 @@ const showComment=(e)=>{
             <Chr className={commentDisplay}/>
             <div className={commentDisplay}>
                 <CreateComment/>
+                <Chr/>
                 <Comment/>
                 
                 
