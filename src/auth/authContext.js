@@ -10,6 +10,7 @@ export const AuthContext = createContext('');
 const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState('');
   const [error, setError] = useState(null)
+  const [loading,setLoading]=useState(false)
   const signup =async (inputs) => {
     var displayname=inputs.fname+' ' + inputs.lname
    const res =await createUserWithEmailAndPassword(auth, inputs.email, inputs.password)
@@ -22,12 +23,14 @@ const AuthContextProvider = ({ children }) => {
       
   }
   const login = async (inputs) => {
+    setLoading(true)
     await setPersistence(auth,browserSessionPersistence)
       .then(()=>{
         return signInWithEmailAndPassword(auth,inputs.username,inputs.password)
       }).then((res)=>{
         setCurrentUser(res.user)
         console.log(currentUser)
+        setLoading(false)
       }).catch((error) => {
     // Handle Errors here.
     setError(error.code)
@@ -52,7 +55,7 @@ const AuthContextProvider = ({ children }) => {
 
 
   return (
-    <AuthContext.Provider value={{error,resetpassword,setCurrentUser,currentUser,signup ,login,logout}}>
+    <AuthContext.Provider value={{loading,error,resetpassword,setCurrentUser,currentUser,signup ,login,logout}}>
       {children}
     </AuthContext.Provider>
   );

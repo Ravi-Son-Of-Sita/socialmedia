@@ -18,7 +18,7 @@ const Login=()=>{
     const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
         };
-    const { login,error} = useContext(AuthContext);
+    const { login,error,loading} = useContext(AuthContext);
     
     const handelForgot=()=>{
         navigate("/forgotpass")
@@ -62,7 +62,7 @@ const Login=()=>{
                         <div>PASSWORD</div>
                         <input type="password" placeholder="Password"  name="password" onChange={handleChange}/>
                     </div>
-                    <div className="loginbutton">
+                    <div className={loading?"loadingbutton":"loginbutton"}>
                         <button onClick={handleLogin}>Login</button>
                     </div>
                     <div className="footer">

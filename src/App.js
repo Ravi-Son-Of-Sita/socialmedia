@@ -23,12 +23,14 @@ import Spinner from './extracompont/Spinner';
 
 
 function App() {
-  const {currentUser,setCurrentUser} = useContext(AuthContext);
+  const {currentUser,setCurrentUser,loading} = useContext(AuthContext);
   //const [user,loading,error]=useAuthState(auth)
-  const [loading,setLoading] =useState(true)
-  useLayoutEffect(() => {
-  onAuthStateChanged(auth, async(user) =>await setCurrentUser(user))
-  setLoading(false)
+
+  const loadCurrentUser=()=>{
+   return onAuthStateChanged(auth,(user) =>setCurrentUser(user))
+  }
+ useLayoutEffect(() => {
+  onAuthStateChanged(auth,(user) =>setCurrentUser(user))
 }, []);
 
 
@@ -88,6 +90,7 @@ function App() {
           <Islogin><EmailVerified/></Islogin>
         ),
         errorElement:<ErrorPage/>,
+        loader:loadCurrentUser,
     children:[
       {
         path:'/profile',
