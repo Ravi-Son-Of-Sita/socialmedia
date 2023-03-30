@@ -33,6 +33,7 @@ const AuthContextProvider = ({ children }) => {
         setLoading(false)
       }).catch((error) => {
     // Handle Errors here.
+    setLoading(false)
     setError(error.code)
     const errorCode = error.code;
     const errorMessage = error.message;

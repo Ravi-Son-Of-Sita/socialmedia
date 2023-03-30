@@ -10,6 +10,7 @@
 
 # production
 /build
+user.txt
 
 # misc
 .DS_Store

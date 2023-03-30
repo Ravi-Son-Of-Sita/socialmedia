@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app";
 import {getAuth,}from 'firebase/auth'
 import {getFirestore}from 'firebase/firestore'
+import {getDatabase} from 'firebase/database'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -21,7 +22,8 @@ const firebaseConfig = {
 
   appId: "1:961724020835:web:382cb780e99920d8272056",
 
-  measurementId: "G-ZRTM5LW1VL"
+  measurementId: "G-ZRTM5LW1VL",
+  databaseURL:"https://samyojak-connecting-default-rtdb.asia-southeast1.firebasedatabase.app"
 
 };
 
@@ -30,4 +32,5 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const dbfS = getFirestore(app)
+export const rtdb =getDatabase(app)
 //connectAuthEmulator(app)

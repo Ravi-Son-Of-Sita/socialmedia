@@ -15,7 +15,7 @@ const NavBar=()=>{
 
   const [logoutDisply, setLogoutDisplay]= useState('logout-none')
   const [messageDisplyList, setMessageDisplayList]= useState('message-box-none')
-  const [messageDisplyBox, setMessageDisplayBox]= useState('message-box-none')
+  const [messageDisplyBox, setMessageDisplayBox]= useState(false)
   const { currentUser} = useContext(AuthContext);
 
 
@@ -63,11 +63,11 @@ const NavBar=()=>{
   }
   const handleMessageBox=(e)=>{
     e.preventDefault();
-      setMessageDisplayBox('message-box')
+      setMessageDisplayBox(true)
       setMessageDisplayList('message-box-none')
   }
   const handleMessageBoxClose=(e)=>{
-    setMessageDisplayBox('message-box-none')
+    setMessageDisplayBox(false)
   }
 
   const handleMessageList=(e)=>{
@@ -76,7 +76,6 @@ const NavBar=()=>{
       setMessageDisplayList('message-box-list')
     }else{ 
       setMessageDisplayList('message-box-none')
-      console.log('message-box-none')
     }
   }
 
@@ -138,10 +137,15 @@ const NavBar=()=>{
               <div style={{position:'absolute',left:'0px',top:'-2px'}}><NumberIndicator/></div>
               <FaUserFriends size={'1.7em'} onClick={handleFriends}/>
             </div>
-            
-            <div className={messageDisplyBox}>
+            {
+              messageDisplyBox?(
+                <div className='message-box'>
             <Messagebox handleMessage={handleMessageBoxClose}/>
             </div >
+              ):(null)
+
+            }
+            
         </div>
       </div>
       )

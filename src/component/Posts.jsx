@@ -4,11 +4,11 @@ import {BiLike,BiComment,BiShare} from "react-icons/bi"
 
 import ProfilePic from "../extracompont/ProfilePic"
 import './posts.scss'
-import "../commoncss.scss"
 import Postimage from '../assest/postsimage.jpg'
 import Chr from "../extracompont/Chr"
 import Comment from "../extracompont/Comment"
 import CreateComment from "../extracompont/CreateComment"
+import '../common.scss'
 import { useState } from 'react'
 
 

@@ -3,7 +3,6 @@
   font-family:'Samarkan';
   src: url(./assest/SAMARO__.woff) format('woff');
 }
-
 .full-layout{
   display:flex;
   flex-direction: column;
@@ -27,6 +26,7 @@
     background-color:#f1edff;;
     min-width:calc(100vw - 20px);
     max-height: calc(100vh - 45px);
+    overflow: hidden;
 
     @include media("<=phonemax"){
       padding: auto;

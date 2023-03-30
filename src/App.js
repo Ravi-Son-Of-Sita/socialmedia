@@ -38,7 +38,7 @@ function App() {
     return(
       <div className='full-layout'>
       <NavBar className='navbar'/>
-      <Outlet/>
+      <Outlet />
       
     </div>
     )
@@ -47,7 +47,7 @@ function App() {
     return(
       <>
       {
-        !currentUser.emailVerified?(
+        !currentUser?(
           <div>
       <span>
       Please verify your email
