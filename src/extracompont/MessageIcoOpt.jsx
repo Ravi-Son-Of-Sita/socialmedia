@@ -22,7 +22,7 @@ const MessageIcoOpt = ({handleMessageBox},props) => {
             </div>
             <div style={{display:'flex',flexDirection:'column',justifyContent:'space-around'}}>
                 <span style={{fontSize:12,fontWeight:'bold'}}>{time_stamp}</span>
-                <div style={{borderRadius:'25%'}}>
+                <div style={{borderRadius:'25%',color:'red'}}>
                     <span style={{alignSelf:'center',fontSize:11}}>{unread_num}</span>
                 </div>
             </div>

@@ -1,14 +1,9 @@
-import React from 'react'
+import React ,{useRef}from 'react'
+import { useEffect } from 'react'
 import ProfilePic from '../../extracompont/ProfilePic'
+import './messagedisplay.scss'
 
 
-const MessageCont=()=>{
-  return(
-      <>
-      {user?<ProfilePic size={'45px'}/>:null}
-      </>
-  )
-}
 
 
 function MessageDisplay() {
@@ -27,20 +22,26 @@ const messages=[
 {message:"Yes, I saw a great action movie last week. What about you?", sendBy:'Sarah', timeStamp:'2021-07-15 13:35:08'}
 
 ]
+const scrolldownRef=useRef(null)
+useEffect(()=>{
+    scrolldownRef.current.scrollIntoView({behavior:'smooth',block:'end'})
+},[])
 
 const message=messages.map((msg)=>
-<div className={msg.sendBy==user?'left_aling':'right_aling'}>
-  {msg.sendBy==user?<ProfilePic size={'45px'}/>:null}
-  <div>
-    <span>{msg.message}</span>
-    <span>{msg.timeStamp}</span>
+<div className={msg.sendBy==user?'left_aling':'right_aling'} style={{display:'flex',flexDirection:'row',marginBottom:'10px'}}>
+  {msg.sendBy==user?<ProfilePic size={'25px'}/>:null}
+  <div style={{display:'flex',flexDirection:'column'}}>
+    <p style={{fontSize:12,fontWeight:'bold',width:'90%',marginBottom:'5px'}}>{msg.message}</p>
+    <span style={{alignSelf:'center',fontSize:11}}>{msg.timeStamp}</span>
   </div>
 </div>
 
 )
 
   return (
-    <div></div>
+    <div ref={scrolldownRef} style={{overflow:'auto',height:'100%'}}>
+      {message}
+    </div>
   )
 }
 

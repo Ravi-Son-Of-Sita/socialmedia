@@ -1,0 +1,13 @@
+.left_aling{
+    
+    margin-left: 10px;
+}
+.right_aling{
+    display: flex;
+    justify-content: right;
+    margin-right: 10px;
+    p{
+        align-self: flex-end;
+        background-color: #ff7233;
+    }
+}
