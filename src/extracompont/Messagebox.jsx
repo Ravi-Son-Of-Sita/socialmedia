@@ -6,6 +6,7 @@ import{GoFileMedia} from "react-icons/go"
 import{RiFileGifFill,RiSendPlane2Fill} from "react-icons/ri"
 import {BsEmojiSmileFill} from "react-icons/bs"
 import ProfilePic from './ProfilePic'
+import MessageDisplay from '../component/Messsage/MessageDisplay'
 import "./messagebox.scss"
 
 function Messagebox({handleMessage}) {
@@ -43,7 +44,7 @@ function Messagebox({handleMessage}) {
                     
                 </div>
                 <div className='msg-area'>
-                    message display
+                    <MessageDisplay/>
                 </div>
                 <div className='buttom-options'>
                     <div className='buttom-options-items'>
