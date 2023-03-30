@@ -2,8 +2,10 @@ import React from "react"
 import { useNavigate } from "react-router-dom"
 import { useContext,useState } from "react"
 import { AuthContext } from "../auth/authContext"
+import {FaFacebookF,FaTwitter } from "react-icons/fa"
 import "./login.scss"
- import {FaFacebookF,FaTwitter } from "react-icons/fa"
+import Spinner from "../extracompont/Spinner"
+
 
 
 const Login=()=>{
@@ -62,8 +64,9 @@ const Login=()=>{
                         <div>PASSWORD</div>
                         <input type="password" placeholder="Password"  name="password" onChange={handleChange}/>
                     </div>
-                    <div className={loading?"loadingbutton":"loginbutton"}>
-                        <button onClick={handleLogin}>Login</button>
+                    <div className="loginbutton">
+                        {loading?<Spinner width={'30px'} height={'30px'}/>:<button onClick={handleLogin}>Login</button>}
+                        
                     </div>
                     <div className="footer">
                         <div className="remember">

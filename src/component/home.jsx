@@ -3,6 +3,7 @@ import "./home.scss"
 import CreatePost from "./CreatePost"
 import Story from "./Story"
 import Posts from "./Posts"
+import Spinner from "../extracompont/Spinner"
 
 
   const HomePage=()=>{
