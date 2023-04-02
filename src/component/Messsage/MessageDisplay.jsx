@@ -1,6 +1,6 @@
 import React ,{useRef}from 'react'
 import { useEffect } from 'react'
-import ProfilePic from '../../extracompont/ProfilePic'
+import ProfilePic from '../extracompont/ProfilePic'
 import './messagedisplay.scss'
 
 
@@ -39,7 +39,7 @@ const message=messages.map((msg)=>
 )
 
   return (
-    <div ref={scrolldownRef} style={{overflow:'auto',height:'100%'}}>
+    <div ref={scrolldownRef} className='message-display-area' style={{overflow:'auto',height:'100%'}}>
       {message}
     </div>
   )

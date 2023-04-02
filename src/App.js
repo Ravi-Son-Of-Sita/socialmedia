@@ -5,19 +5,19 @@ import {useAuthState} from "react-firebase-hooks/auth"
 import {onAuthStateChanged}from'firebase/auth'
 import './App.scss'
 import "./assest/SAMARO__.woff"
-import HomePage from './component/home';
-import NavBar from './component/Navbar';
-import LeftBar from './component/LeftBar';
-import RightBar from './component/RightBar';
+import HomePage from './component/homepage/home';
+import NavBar from './component/navbar/Navbar';
+import LeftBar from './component/homepage/LeftBar';
+import RightBar from './component/homepage/RightBar';
 import { AuthContext } from './auth/authContext';
-import Profile from "./component/Profile";
-import Friends from "./component/Friends";
-import Register from "./component/Register";
-import ForgotPassword from "./component/ForgotPassword";
-import Login from './component/Login';
-import RegConf from './component/RegConf';
-import ErrorPage from './extracompont/ErrorPage';
-import Spinner from './extracompont/Spinner';
+import Profile from "./component/profile/Profile";
+import Friends from "./component/friends/Friends";
+import Register from "./component/auth/Register";
+import ForgotPassword from "./component/auth/ForgotPassword";
+import Login from './component/auth/Login';
+import RegConf from './component/auth/RegConf';
+import ErrorPage from './component/extracompont/ErrorPage';
+import Spinner from './component/extracompont/Spinner';
 
 
 

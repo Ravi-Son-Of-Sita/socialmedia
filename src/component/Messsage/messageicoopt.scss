@@ -1,0 +1,53 @@
+@import '../../_include-media.scss';
+  
+  
+  .messagelist-cont{
+    display: flex;
+    flex-direction: column;  
+    width: 360px;
+    max-height: 460px;
+    @include media("<=phonemax"){
+      width: 260px;
+    }
+    border-radius: 0px 0px 5px 5px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px 1px;
+  .upper-part{
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        background-color: white;
+        .messages-list{
+            display: flex;
+            flex-direction: row;
+            padding: 5px;
+            align-content: center;
+            cursor: pointer;
+        }
+        .messages-list:hover{
+          background-color: rgb(223,223,223);
+          border-radius: 8px;
+
+        }
+        .messages-list>*{
+          margin-right: 10px;
+          align-self: center;
+        }
+    }
+  .lower-part{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    min-height: 45px;
+    span{
+      align-self: center;
+  font-size: 16px;
+  font-weight: bold;
+    }
+    span:hover{
+      font-weight:300;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+  }

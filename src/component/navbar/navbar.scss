@@ -1,0 +1,262 @@
+@import '../../_include-media.scss';
+.navbar{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+    height:45px;
+    background-color:#ff7233;
+    
+  .left-part{
+      display:flex;
+      flex-direction:row;
+      padding-left: 10px;
+      .icon-container{
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 5px;
+        cursor: pointer;
+        background-color:rgba($color: #424271, $alpha: 0.7);
+        .icon-mid-container{
+          display: flex;
+        justify-content: center;
+        align-self: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        background-color: #424271;
+        border-radius: 50%;
+
+        }
+      }
+      
+      .logo-name{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        align-items: center;
+        
+        .logo-text{
+         align-self: center;
+         color: #424271;
+         font-family:  'Samarkan',sans-serif;
+         font-size: 1.5rem;
+         font-weight:900;
+         margin-right: 10px;
+         border-bottom-right-radius: 5px;
+         @include media("<=phonemax"){
+           
+           display: none;
+       
+        }
+        @include media(">phonemax","<=tablet"){
+          display: none;
+        }
+
+        }
+        div{
+          cursor: pointer;
+          color: aliceblue;
+        }
+        div:hover{
+          color: #575899;
+        }
+    }
+    .logo-name > *+*{
+      margin-left: 20px ;
+    }
+    
+    
+      }
+  .left-part>*{
+    margin-right:25px; 
+    @include media(">phonemax","<=tablet"){
+      margin-left:15px;
+   }
+    
+    @include media("<=phonemax"){
+              
+    margin-right:10px;
+
+}}
+    .center-part{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+      border: 2px solid #f8efeb;
+      border-radius: 5px;
+      div{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        width: 300px;
+        height: 30px;
+        padding-left: 10px;
+        cursor:pointer;
+        @include media("<=phonemax"){
+          width: 25px;
+          padding-left:5px;
+      }
+      @include media(">phonemax","<=tablet"){
+         width: 100px;
+      }
+      @include media(">tablet","<=desktop"){
+        width: 129px;
+          }
+        input{
+            border: none;
+            height: 30px;
+            width: 250px;
+            background-color:#f8efeb;
+            border-top-right-radius:5px;
+            border-bottom-right-radius: 5px;
+            @include media("<=phonemax"){
+              
+              display: none;
+          
+          }
+          @include media(">phonemax","<=tablet"){
+            width: 50px;
+         }
+         @include media(">tablet","<=desktop"){
+          width: 100px;
+            }
+        }
+      }
+    }
+    .right-part{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-content: center;
+        padding: 10px;
+        .profilepic{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-self: center;
+            margin-right: 10px;
+            
+            div{
+                width: 30px;
+                height: 30px;
+                border-radius: 25px;
+                overflow: hidden;
+                align-self: center;
+                
+            }
+            span{
+                align-self: center;
+                color: #f8efeb;
+                @include media(">tablet","<=desktop"){
+                  font-size: 14px;
+                  max-height: 35px;
+                  width: 45%;
+               }
+                @include media(">phonemax","<=tablet"){
+                  display: none;
+               }
+               @include media("<=phonemax"){
+              
+                display: none;
+            
+            }
+            }
+        }
+        .profilepic>*{
+          margin-right: 10px;
+          cursor: pointer;
+        }
+        .icons-nav{
+            display: flex;
+            align-self: center;
+            color: #f8efeb;
+            border-radius: 25px;
+            cursor: pointer;
+            position: relative;
+        }
+        .icons-nav:hover{
+          color: #424271;
+        }
+        .logout-cont{
+          background-color: #ff7233;
+          display:flex;
+          position: absolute;
+          justify-content: center;
+          top: 45px;
+          width: 100px;
+          height: 100px;
+          .logout-inner{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            justify-content: space-around;
+            button{
+              padding:6px;
+              background-color: #424271;
+              color: #ff7233;
+              border-radius: 12px;
+              border: none;
+              font-size: 1rem;
+              font-weight: bold;
+          }
+          button:hover{
+              background-color: #ff7233;
+              color: #424271;
+              border-color: #424271;
+          }
+            
+          }
+          .logout-inner>*{
+            margin-bottom: 15px;
+            align-content: center;
+            
+          }
+
+        }
+        .logout-none{
+          display: none;
+        }
+        .message-box-none{
+          display: none;
+        }
+        .message-box-list{
+        
+          position: absolute;
+          top: 45px;
+          right: 20px;
+          z-index: 2;
+    
+        }
+    }
+    .right-part>*{
+      margin-left:25px;
+      @include media(">phonemax","<=tablet"){
+        margin-left:15px;
+     }
+      @include media("<=phonemax"){
+              
+        margin-left:10px;
+    
+    }
+    }
+  .message-box-none{
+    display: none;
+  }
+  .message-box{
+  
+    position: fixed;
+    right: 30px;
+    bottom: 0px;
+    width: 338px;
+    max-height: 511px;
+
+  }
+    
+  }

@@ -1,0 +1,56 @@
+@import '../../_include-media.scss';
+
+
+.left-bar{
+    overflow: hidden;
+
+    @include media("<=phonemax"){
+           
+        display: none;
+    }
+    .left-bar-cont{
+        display: block;
+        padding-top: 10px;
+        /*width: 310px;*/
+        overflow-y: auto;
+        height: 100vh;
+        
+        @include media(">phonemax","<=tablet"){
+            width: 100px;
+            padding-left: 10px;
+          }
+    
+        .top-part{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            div{
+            display: flex;
+            flex-direction: row;
+            align-content:center;
+        
+                text-decoration: none;
+                .link-con{
+                .icon-con{
+                    display: flex;
+                    min-width: 40px;
+                    min-height: 40px;
+                    justify-content: center;
+                    flex-direction: column;
+                    margin-right: 10px;
+                
+                }
+                span{
+                    align-self: center;
+                    @include media("<=desktop"){
+                        display: none;
+                      }
+
+                }
+            }
+        }
+        }
+
+
+    }
+}

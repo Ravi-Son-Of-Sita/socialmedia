@@ -2,7 +2,7 @@ import React from 'react'
 import {BsFillPlusCircleFill} from 'react-icons/bs'
 import './story.scss'
 import ravipic from "../assest/raviprofile.jpg"
-import ProfilePic from '../extracompont/ProfilePic'
+import ProfilePic from './extracompont/ProfilePic'
 
 function Story() {
 

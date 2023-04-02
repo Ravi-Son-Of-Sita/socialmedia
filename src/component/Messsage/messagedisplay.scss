@@ -11,3 +11,11 @@
         background-color: #ff7233;
     }
 }
+.message-display-area{
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.message-display-area::-webkit-scrollbar{
+    display: none;
+ }

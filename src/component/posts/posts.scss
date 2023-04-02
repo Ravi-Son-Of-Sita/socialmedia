@@ -1,0 +1,91 @@
+@import '../../_include-media.scss';
+.post-show-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 530px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px 1px;
+    @include media("<=phonemax"){
+        width: 330px;
+    }
+    @include media(">phonemax","<=tablet"){
+        width: 430px;
+      }
+    .post-upper{
+        display: flex;
+        flex-direction: row;
+        margin:10px 10px 0px 10px;
+    }
+    .Post-content{
+        width:calc(100%);
+        display: flex;
+        flex-direction: column;
+        div{
+
+            img{
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    
+    
+    .post-lower{
+        display: flex;
+        flex-direction: column;
+
+        .like-comment-cont{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 10px;
+            div{
+                display: flex;
+                flex-direction: row;
+                div{
+                    display: flex;
+                    flex-direction: row;
+                    cursor: pointer;
+                    span{
+                        font-size: 14px;
+                        font-weight: bold;
+                        margin-left: 5px;
+                        color: rgb(101, 103, 107);
+                        align-self:center;
+                    }
+                    span:hover{
+                        text-decoration:underline;
+                        text-decoration-color: black;
+                    }
+                }
+            }
+        }
+        .hr{
+            min-height: 2px;
+            border: none;
+            background-color: rgb(233, 233, 233);
+        }
+        .l-c-s-button{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin: 10px;
+            div{
+                display: flex;
+                width: 33%;
+                justify-content: center;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            div:hover{
+                background-color:rgb(233, 233, 233) ;
+            }
+            div>*{
+                margin: 5px;
+            }
+        }
+    }
+}

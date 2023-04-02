@@ -8,6 +8,8 @@
     border-radius: 8px;
     overflow-y: hidden;
     scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px 1px;
     @include media("<=phonemax"){
         width: 300px;
@@ -128,3 +130,6 @@
 
     }
 }
+.story-contanier::-webkit-scrollbar{
+    display: none;
+ }
