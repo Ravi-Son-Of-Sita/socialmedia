@@ -20,7 +20,7 @@ function Icon(props) {
         <g
           id="text496"
           fill="#fff"
-          ariaLabel="S"
+          aria-label="S"
           fontFamily="FreeSans"
           fontSize="192"
           fontWeight="600"

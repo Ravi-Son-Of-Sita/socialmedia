@@ -26,11 +26,11 @@ function App() {
   const {currentUser,setCurrentUser,loading} = useContext(AuthContext);
   //const [user,loading,error]=useAuthState(auth)
 
-  const loadCurrentUser=()=>{
-   return onAuthStateChanged(auth,(user) =>setCurrentUser(user))
+ useEffect(() => {
+  const onAuthChange=async()=>{
+   onAuthStateChanged(auth,(user) =>setCurrentUser(user))
   }
- useLayoutEffect(() => {
-  onAuthStateChanged(auth,(user) =>setCurrentUser(user))
+   onAuthChange()
 }, []);
 
 
@@ -90,7 +90,6 @@ function App() {
           <Islogin><EmailVerified/></Islogin>
         ),
         errorElement:<ErrorPage/>,
-        loader:loadCurrentUser,
     children:[
       {
         path:'/profile',

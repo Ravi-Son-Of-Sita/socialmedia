@@ -2,10 +2,15 @@ import React from 'react'
 import './spinner.css'
 
 function Spinner(props) {
-  const borderColorComb=props.borderColor+' transparent '+props.borderColor +' tansprant'
   const style={
     width:props.width,
     height:props.height,
+    borderTopColor:props.borderColor,
+    borderBottomColor:props.borderColor,
+    borderLeftColor:'transparent',
+    borderRightColor:'transparent',
+    
+    
   }
 
   return (

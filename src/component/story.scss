@@ -67,6 +67,17 @@
                     align-content: center;
                     color: #ff7233;
                 }
+                div:hover{
+                    animation: pulse 1.5s 1;
+                    }
+                    @keyframes pulse {
+                        0% {
+                          transform: rotate(0deg);
+                        }
+                        100% {
+                          transform: rotate(360deg);
+                        }
+                      }
             }
             div{
                 position: absolute;

@@ -65,7 +65,7 @@ const Login=()=>{
                         <input type="password" placeholder="Password"  name="password" onChange={handleChange}/>
                     </div>
                     <div className="loginbutton">
-                        {loading?<Spinner width={'30px'} height={'30px'}/>:<button onClick={handleLogin}>Login</button>}
+                        {loading?<Spinner width={'30px'} height={'30px'} borderColor={'#ff7233'}/>:<button onClick={handleLogin}>Login</button>}
                         
                     </div>
                     <div className="footer">
