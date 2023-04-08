@@ -15,6 +15,7 @@ function MessageDisplay() {
   const chatId='LKur9d9UK1bfPBD5fo4ugqnPejo2-6mJvijZwytYKTfA0jw8LvKW84M73'
 
   const [messages,setMessages]=useState(null)
+  const [messagedata,setMessageData]=useState(null)
 const currentUser=auth.currentUser.uid
 const user =()=>{if(currentUser=='LKur9d9UK1bfPBD5fo4ugqnPejo2'){
     return '6mJvijZwytYKTfA0jw8LvKW84M73'
