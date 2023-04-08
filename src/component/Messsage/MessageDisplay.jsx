@@ -25,15 +25,25 @@ const scrolldownRef=useRef(null)
 const ReadMessageDb=()=>{
   const q = query(collection(dbfS, 'chats'))
   const unsubscribe = onSnapshot(doc(q, chatId), (snapshot) => {
+    let pushmessage=[]
 
-    for (const [a,b] of Object.entries(snapshot.data({ serverTimestamps: 'estimate' }))) {
+    for (const [id,b] of Object.entries(snapshot.data({ serverTimestamps: 'estimate' }))) {
       
-      console.log(b);
+      console.log(id,b.message,b.time, b.sendBy);
+      pushmessage.push(
+        {
+          id:id,
+          message:b.message,
+          sendBy:b.sendBy,
+          attachment:b.attechment,
+          time:b.time
+        }
+      )
     }
   
 
-  //  setMessages(data);
-   // console.log(data);
+  setMessages(pushmessage);
+   console.log(messages);
   })
   return unsubscribe
 }
