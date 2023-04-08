@@ -1,5 +1,4 @@
-import React ,{useRef, useState}from 'react'
-import { useEffect } from 'react'
+import React ,{useRef, useState,useEffect,useMemo}from 'react'
 import {onSnapshot,collection,doc,query} from 'firebase/firestore'
 import { dbfS } from '../../firebase';
 import Spinner from '../extracompont/Spinner';
@@ -14,7 +13,7 @@ import { auth } from '../../firebase'
 function MessageDisplay() {
   const chatId='LKur9d9UK1bfPBD5fo4ugqnPejo2-6mJvijZwytYKTfA0jw8LvKW84M73'
 
-  const [messages,setMessages]=useState(null)
+  const [messages,setMessages]=useState([{id:''}])
   const [messagedata,setMessageData]=useState(null)
 const currentUser=auth.currentUser.uid
 const user =()=>{if(currentUser=='LKur9d9UK1bfPBD5fo4ugqnPejo2'){
@@ -22,15 +21,20 @@ const user =()=>{if(currentUser=='LKur9d9UK1bfPBD5fo4ugqnPejo2'){
     }
     return 'LKur9d9UK1bfPBD5fo4ugqnPejo2'
 }
-const scrolldownRef=useRef(null)
+
+
+
 const ReadMessageDb=()=>{
   const q = query(collection(dbfS, 'chats'))
   const unsubscribe = onSnapshot(doc(q, chatId), (snapshot) => {
-    let pushmessage=[]
+    setMessageData(snapshot.data({ serverTimestamps: 'estimate' }))
+  })
+}
 
-    for (const [id,b] of Object.entries(snapshot.data({ serverTimestamps: 'estimate' }))) {
-      
-      console.log(id,b.message,b.time, b.sendBy);
+const msgArr=useMemo(()=>{
+  if(messagedata!==null){
+    let pushmessage=[]
+    for (const [id,b] of Object.entries(messagedata)) {
       pushmessage.push(
         {
           id:id,
@@ -41,17 +45,15 @@ const ReadMessageDb=()=>{
         }
       )
     }
-  
+    setMessages(pushmessage)
+  }
+},[messagedata])
 
-  setMessages(pushmessage);
-   console.log(messages);
-  })
-  return unsubscribe
-}
+
 useEffect(()=>{
   ReadMessageDb()
-  console.log(messages)
-},[messages])
+  console.log(typeof(messages))
+},[messages[0].id])
 
 const message=!messages?.map((msg)=>
 <div className={msg.sendBy==user?'left_aling':'right_aling'} style={{display:'flex',flexDirection:'row',marginBottom:'10px'}}>
@@ -65,7 +67,7 @@ const message=!messages?.map((msg)=>
 )
 
   return (
-    <div ref={scrolldownRef} className='message-display-area' style={{overflow:'auto',height:'100%',display:'flex',justifyContent:'center',alignItems:'center'}}>
+    <div className='message-display-area' style={{overflow:'auto',height:'100%',display:'flex',justifyContent:'center',alignItems:'center'}}>
       {!messages?(<Spinner width={'30px'} height={'30px'} borderColor={'#ff7233'}/>):(message)}
     </div>
   )
