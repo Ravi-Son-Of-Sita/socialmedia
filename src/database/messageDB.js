@@ -31,7 +31,7 @@ export const ReadMessageDb=(ChatId)=>{
         console.log(snapshot.data({serverTimestamps:'estimate'}))
         return snapshot.data({serverTimestamps:'estimate'})
 })
-    return ()=> unsubscribe()
+    return unsubscribe;
 }
 
 export default SendMessageDb;

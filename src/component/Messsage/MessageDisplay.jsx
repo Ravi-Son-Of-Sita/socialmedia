@@ -6,7 +6,7 @@ import Spinner from '../extracompont/Spinner';
 
 import ProfilePic from '../extracompont/ProfilePic'
 import './messagedisplay.scss'
-import {ReadMessageDb} from '../../database/messageDB'
+//import {ReadMessageDb} from '../../database/messageDB'
 import { auth } from '../../firebase'
 
 
@@ -22,19 +22,25 @@ const user =()=>{if(currentUser=='LKur9d9UK1bfPBD5fo4ugqnPejo2'){
     return 'LKur9d9UK1bfPBD5fo4ugqnPejo2'
 }
 const scrolldownRef=useRef(null)
-/*const ReadMessageDb=async()=>{
+const ReadMessageDb=()=>{
   const q = query(collection(dbfS, 'chats'))
   const unsubscribe = onSnapshot(doc(q, chatId), (snapshot) => {
-    setMessages(snapshot.data({ serverTimestamps: 'estimate' }));
-    console.log(messages);
+
+    for (const [a,b] of Object.entries(snapshot.data({ serverTimestamps: 'estimate' }))) {
+      
+      console.log(b);
+    }
+  
+
+  //  setMessages(data);
+   // console.log(data);
   })
-  return ()=> unsubscribe()
-}*/
+  return unsubscribe
+}
 useEffect(()=>{
-  setMessages(ReadMessageDb(chatId))
+  ReadMessageDb()
   console.log(messages)
-    scrolldownRef.current.scrollIntoView({behavior:'smooth',block:'end'})
-},[])
+},[messages])
 
 const message=!messages?.map((msg)=>
 <div className={msg.sendBy==user?'left_aling':'right_aling'} style={{display:'flex',flexDirection:'row',marginBottom:'10px'}}>
