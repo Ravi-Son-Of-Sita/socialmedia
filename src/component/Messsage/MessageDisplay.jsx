@@ -15,6 +15,7 @@ function MessageDisplay() {
 
   const [messages,setMessages]=useState([{id:''}])
   const [messagedata,setMessageData]=useState(null)
+  const [keylength,setKeylength]= useState(null)
 const currentUser=auth.currentUser.uid
 const user =()=>{if(currentUser=='LKur9d9UK1bfPBD5fo4ugqnPejo2'){
     return '6mJvijZwytYKTfA0jw8LvKW84M73'
@@ -28,6 +29,8 @@ const ReadMessageDb=()=>{
   const q = query(collection(dbfS, 'chats'))
   const unsubscribe = onSnapshot(doc(q, chatId), (snapshot) => {
     setMessageData(snapshot.data({ serverTimestamps: 'estimate' }))
+
+    setKeylength(Object.keys(snapshot.data({ serverTimestamps: 'estimate' })).length)
   })
 }
 
@@ -41,28 +44,28 @@ const msgArr=useMemo(()=>{
           message:b.message,
           sendBy:b.sendBy,
           attachment:b.attechment,
-          time:b.time
+          time:b.time.toDate().toLocaleString()
         }
       )
     }
     setMessages(pushmessage)
   }
-},[messagedata])
+},[keylength])
 
 
 useEffect(()=>{
   ReadMessageDb()
-  console.log(typeof(messages))
-},[messages[0].id])
+},[messages])
 
-const message=!messages?.map((msg)=>
+const message=!messages?.map((msg)=>{
+  
 <div className={msg.sendBy==user?'left_aling':'right_aling'} style={{display:'flex',flexDirection:'row',marginBottom:'10px'}}>
   {msg.sendBy==user?<ProfilePic size={'25px'}/>:null}
   <div style={{display:'flex',flexDirection:'column'}}>
-    <p style={{fontSize:12,fontWeight:'bold',width:'90%',marginBottom:'5px'}}>{msg.message}</p>
+    <p style={{fontSize:12,fontWeight:'bold',width:'90%',marginBottom:'5px'}}>{msg.message}{console.log(msg.message)}</p>
     <span style={{alignSelf:'center',fontSize:11}}>{msg.time}</span>
   </div>
-</div>
+</div>}
 
 )
 
