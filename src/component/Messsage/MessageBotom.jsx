@@ -27,6 +27,8 @@ function MessageBotom() {
             <div>
             <AiFillPlusCircle size={'1.45em'}/>
             </div>
+            {!messageText?(
+            <>
             <div>
             <GoFileMedia size={'1.45em'}/>
             </div>
@@ -36,9 +38,12 @@ function MessageBotom() {
             <div>
             <RiFileGifFill size={'1.45em'}/>
             </div>
+            </>
+            ):(null)
+            }
             
-            <div className='msg-input-cont'>
-                <input type="text" placeholder='Aa' onChange={messageInputHandle}/>
+            <div className='msg-input-cont' style={{display:'flex',flexGrow:1,margin:'auto'}}>
+                <input type="text" placeholder='Aa' onChange={messageInputHandle} style={{flexGrow:'0.6',fontSize:'1em'}}/>
                 <BsEmojiSmileFill size={'1.25em'}/>
 
             </div>

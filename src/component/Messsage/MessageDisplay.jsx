@@ -13,7 +13,7 @@ import { auth } from '../../firebase'
 function MessageDisplay() {
   const chatId='LKur9d9UK1bfPBD5fo4ugqnPejo2-6mJvijZwytYKTfA0jw8LvKW84M73'
 
-  const [messages,setMessages]=useState([{id:''}])
+  const [messages,setMessages]=useState()
   const [messagedata,setMessageData]=useState(null)
   const [keylength,setKeylength]= useState(null)
 const currentUser=auth.currentUser.uid
@@ -48,7 +48,8 @@ const msgArr=useMemo(()=>{
         }
       )
     }
-    setMessages(pushmessage)
+    setMessages(()=>pushmessage)
+      console.log(messages)
   }
 },[keylength])
 
@@ -59,10 +60,10 @@ useEffect(()=>{
 
 const message=!messages?.map((msg)=>{
   
-<div className={msg.sendBy==user?'left_aling':'right_aling'} style={{display:'flex',flexDirection:'row',marginBottom:'10px'}}>
-  {msg.sendBy==user?<ProfilePic size={'25px'}/>:null}
+<div className={msg.sendBy==user()?'left_aling':'right_aling'} style={{display:'flex',flexDirection:'row',marginBottom:'10px'}}>
+  {msg.sendBy==user()?<ProfilePic size={'25px'}/>:null}
   <div style={{display:'flex',flexDirection:'column'}}>
-    <p style={{fontSize:12,fontWeight:'bold',width:'90%',marginBottom:'5px'}}>{msg.message}{console.log(msg.message)}</p>
+    <p style={{fontSize:12,fontWeight:'bold',width:'90%',marginBottom:'5px'}}>{msg.message}{console.log(msg.id)}</p>
     <span style={{alignSelf:'center',fontSize:11}}>{msg.time}</span>
   </div>
 </div>}
