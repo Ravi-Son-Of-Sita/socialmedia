@@ -23,15 +23,15 @@ import Spinner from './component/extracompont/Spinner';
 
 
 function App() {
-  const {currentUser,setCurrentUser,loading} = useContext(AuthContext);
-  //const [user,loading,error]=useAuthState(auth)
+  //const {currentUser,setCurrentUser,loading} = useContext(AuthContext);
+  const [user,loading,error]=useAuthState(auth)
 
- useEffect(() => {
+/**useEffect(() => {
   const onAuthChange=async()=>{
    onAuthStateChanged(auth,(user) =>setCurrentUser(user))
   }
    onAuthChange()
-}, []);
+}, []);**/
 
 
   const MainPage=()=>{
@@ -47,7 +47,7 @@ function App() {
     return(
       <>
       {
-        !currentUser?(
+        !user.emailVerified?(
           <div>
       <span>
       Please verify your email
@@ -72,23 +72,29 @@ function App() {
       </div>
     )
   }
-  const Islogin = ({ children }) => {
+  const Islogin = () => {
+    return(
+      <>
+      {!user?(<Login/>):(<EmailVerified/>)}
+      </>
 
-    if (!currentUser) {
+    )
+  }
+/**const Islogin = ({ children }) => {
+
+    if (!user) {
       console.log('i am stuck')
-      console.log(currentUser)
+      console.log(user)
       return <Login/>;
     }
     
     console.log('i am out')
 
     return children;
-  };
+  };**/
   const route=createHashRouter([
     { 
-        element:(
-          <Islogin><EmailVerified/></Islogin>
-        ),
+        element:<Islogin/>,
         errorElement:<ErrorPage/>,
     children:[
       {
