@@ -26,12 +26,13 @@ function App() {
   //const {currentUser,setCurrentUser,loading} = useContext(AuthContext);
   const [user,loading,error]=useAuthState(auth)
 
-/**useEffect(() => {
-  const onAuthChange=async()=>{
+useEffect(() => {
+  /**const onAuthChange=async()=>{
    onAuthStateChanged(auth,(user) =>setCurrentUser(user))
   }
-   onAuthChange()
-}, []);**/
+   onAuthChange()**/
+   console.log(loading)
+}, [loading]);
 
 
   const MainPage=()=>{
@@ -55,7 +56,7 @@ function App() {
       
       </div>
         ):(<>
-            {!loading?(<MainPage/>):(<Spinner/>)}
+            <MainPage/>
           </>
         )
       }
@@ -75,7 +76,7 @@ function App() {
   const Islogin = () => {
     return(
       <>
-      {!user?(<Login/>):(<EmailVerified/>)}
+      {loading?(<div style={{display:'flex', minWidth:'100vw',minHeight:'100vh',justifyContent:"center",alignItems:"center"}}><Spinner width={'30px'} height={'30px'} borderColor={'#ff7233'}/></div>):(!user?(<Login/>):(<EmailVerified/>))}
       </>
 
     )

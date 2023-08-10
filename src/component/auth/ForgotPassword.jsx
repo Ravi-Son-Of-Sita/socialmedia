@@ -21,11 +21,11 @@ function ForgotPassword() {
       }
     }
   return (
-    <div>
+    <div style={{display:"flex", flexDirection:"column",}}>
       <div>
       <h2>Reset Your Password</h2>
       <p>Please enter Your register email address below </p>
-      <div>
+      <div style={{display:"flex",justifyContent:"space-around"}}>
         <label>
           Email Adress
         </label>
